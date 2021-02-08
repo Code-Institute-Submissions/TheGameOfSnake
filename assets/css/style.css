@@ -3,11 +3,18 @@
     font-family: 'Hachi Maru Pop', cursive;
 }
 
+/* General CSS */
+
 h1{
     font-size: 3rem;
     margin-bottom:0.25rem;
     color: #12355B;
     text-align: center;   
+}
+
+h2{
+    font-size: 2rem;
+    color: #12355B; 
 }
 
 .background{
@@ -39,7 +46,13 @@ section{
     text-align: center;
 }
 
-  #info-section p{
+.invisible{
+    display: none;
+}
+
+/* Info section CSS */
+
+#info-section p{
     font-size: 2rem;
     font-weight: 1000;
 }
@@ -71,6 +84,24 @@ section{
     background: rgba(255, 41, 41,0.5);
     box-shadow: 0.5rem 0.75rem 0.75rem rgb(0, 0, 0);
     cursor: pointer;
+}
+
+/* Game over section css */
+
+#game-over-section{
+    position: absolute;
+    width: 75%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -60%);
+    color: #12355B;
+}
+
+#game-over-section p,
+#game-over-section span{
+    margin-top: 2.5rem;
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 

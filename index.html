@@ -16,14 +16,14 @@
         <header>
             <h1>Game of Snakes</h1>
         </header>
-        <section id="info-section">
+        <section id="info-section" class="invisible">
             <p>Select your game mode:</p>
             <div id="through-the-wall" class="btn-gamemode active-gamemode"><span>Through the wall</span></div>
             <div id="walls-are-solid" class="btn-gamemode"><span>Walls are solid</span></div>
             <div><button class=btn-start-game onclick="setUpGame()">Start the game</button></div>
         </section>
 
-        <section id="game-over-section" class="invisible">
+        <section id="game-over-section" >
             <div>
                 <h2>Game over!</h2>
                 <p>You reached level <span id='final-level'></span></p>
