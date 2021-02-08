@@ -131,7 +131,7 @@ The colours are a combination of yellow, blue, white, and green. The colours are
 
 The next pallet is used in the project.
 
-Create a palette - Coolors
+<img src="docs\colors\color-pallete.png">
 
 ### Typography
 In order to maximize the 1990’s feeling the HachiMaruPop font is used in this project.
