@@ -37,12 +37,7 @@ h1{
 
 section{
     text-align: center;
-    max-height: 75vh;
 }
-
-#info-section{
-    margin-top: 7rem;
-  }
 
   #info-section p{
     font-size: 2rem;
@@ -53,3 +48,44 @@ section{
     margin-top: 7rem;
     font-weight: 1000;
 }
+
+.btn-gamemode span{
+    background: rgba(255, 255, 255, 0.5);
+    border: black solid 1px;
+    border-radius: 5px;
+    padding:1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.active-gamemode span{
+    background: #fdc555 ;
+    box-shadow: 0.5rem 0.75rem 0.75rem rgb(0, 0, 0);
+}
+
+.btn-start-game{
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: 3rem;
+    background: rgba(255, 41, 41,0.5);
+    box-shadow: 0.5rem 0.75rem 0.75rem rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 1025px) {
+    h1{
+        font-size: 5rem;
+    }
+
+    #info-section p{
+        font-size: 2rem;
+    }
+
+    #info-section div{
+        margin-top:3rem;
+    }
+}
+
+
