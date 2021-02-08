@@ -74,18 +74,3 @@ section{
 }
 
 
-@media only screen and (min-width: 1025px) {
-    h1{
-        font-size: 5rem;
-    }
-
-    #info-section p{
-        font-size: 2rem;
-    }
-
-    #info-section div{
-        margin-top:3rem;
-    }
-}
-
-
