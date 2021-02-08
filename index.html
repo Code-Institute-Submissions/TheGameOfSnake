@@ -22,6 +22,15 @@
             <div id="walls-are-solid" class="btn-gamemode"><span>Walls are solid</span></div>
             <div><button class=btn-start-game onclick="setUpGame()">Start the game</button></div>
         </section>
+
+        <section id="game-over-section" class="invisible">
+            <div>
+                <h2>Game over!</h2>
+                <p>You reached level <span id='final-level'></span></p>
+                <p>Your score was <span id='final-score'></span></p>
+                <button class=btn-start-game onclick="reset()">Continue</button>
+            </div>
+        </section>
     
 </body>
 
