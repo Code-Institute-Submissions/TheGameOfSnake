@@ -16,11 +16,15 @@
         <header>
             <h1>Game of Snakes</h1>
         </header>
-        <section id="info-section" >
+        <section id="info-section" class="invisible">
             <h2>Select your game mode:</h2>
             <div id="through-the-wall" class="btn-gamemode active-gamemode"><span>Through the wall</span></div>
             <div id="walls-are-solid" class="btn-gamemode"><span>Walls are solid</span></div>
             <div><button class=btn-start-game onclick="setUpGame()">Start the game</button></div>
+        </section>
+
+        <section id="game-section" class="invisible">
+            <canvas id="game"></canvas>
         </section>
 
         <section id="game-over-section" class="invisible">
