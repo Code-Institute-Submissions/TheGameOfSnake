@@ -22,6 +22,7 @@ class Snake {
         var new_body = JSON.parse(JSON.stringify(this.head))
         this.body.push(new_body);
         snake.newPos()
+        snake.checkWall(mode)
         this.body.splice(0, 1);
     }
     draw() {
@@ -49,6 +50,30 @@ class Snake {
         this.head.ypos += this.speedY;
         this.newDirection == undefined
     }
+    checkWall = function (mode) {
+        if (mode == gameMode.troughthewall) {
+            if (this.head.xpos >= ctx.canvas.width) {
+                this.head.xpos = 0;
+            }
+            else if (this.head.xpos < 0) {
+                this.head.xpos = ctx.canvas.width - 15;
+            }
+            else if (this.head.ypos >= ctx.canvas.height) {
+                this.head.ypos = 0;
+            }
+            else if (this.head.ypos < 0) {
+                this.head.ypos = ctx.canvas.height - 15;
+            }
+            else {
+                return;
+            }
+        }
+        else {
+            if (this.head.xpos == ctx.canvas.width || this.head.xpos == 0 || this.head.ypos == ctx.canvas.height || this.head.ypos == 0) {
+                gameOVer = true;
+            }
+        }
+    }
 }
 
 
@@ -65,6 +90,7 @@ var directions = {
 };
 
 var fps = 5;
+var gameOVer = false;
 var speed = { xspeed: 15, yspeed: 0 };
 var head = new HeadPosition(60, 300)
 var body = [];
@@ -102,12 +128,14 @@ function startGame() {
     if (ctx == null) { return; }
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-    snake.update();
+    snake.update(mode);
     snake.draw();
 
-    setTimeout(function () { //throttle requestAnimationFrame to 10fps
-        requestAnimationFrame(startGame);
-    }, 1000 / fps)
+    if (!gameOVer) {
+        setTimeout(function () { //throttle requestAnimationFrame to 20fps
+            requestAnimationFrame(startGame);
+        }, 1000 / fps)
+    }
 }
 
 function setUpCanvas() {
