@@ -148,7 +148,12 @@ Under construction
 Under construction
 
 # Technologies 
-Under construction
+
+Moqups
+HTML5
+CSS
+JavaScript
+
 # Testing 
 Under construction
 # Deployment 
@@ -157,6 +162,13 @@ Under construction
 Under construction
 ### Used Websites
 https://coolors.co/ 
+https://www.rgbtohex.net/hextorgb/
+https://attacomsian.com/blog/javascript-copy-array
+https://www.conventionalcommits.org/en/v1.0.0/#summary
+https://en.wikipedia.org/wiki/Snake_(video_game_genre)
+https://www.geeksinux.com/the-elements-of-user-experience-design/ 
+http://www.javascriptkit.com/javatutors/touchevents2.shtml 
+
 
 
 
