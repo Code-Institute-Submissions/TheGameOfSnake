@@ -77,6 +77,15 @@ class Snake {
             }
         }
     }
+    crash = function () {
+        for (let index = 0; index < this.body.length; index++) {
+            var positions = this.body[index]
+            if (this.head.xpos == positions.xpos && this.head.ypos == positions.ypos) {
+                gameOVer = true;
+            }
+        }
+
+    }
 }
 
 
@@ -133,6 +142,7 @@ function startGame() {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
     snake.update(mode);
+    snake.crash
     snake.draw();
 
     if (!gameOVer) {
