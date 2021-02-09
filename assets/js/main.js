@@ -283,6 +283,8 @@ function makeFood(snake) {
 function reset() {
     gameOVer = false;
     mode = gameMode.troughthewall;
+    level = 1;
+    score = 0;
     document.getElementById('through-the-wall').classList.add('active-gamemode');
     document.getElementById('walls-are-solid').classList.remove('active-gamemode');
 
