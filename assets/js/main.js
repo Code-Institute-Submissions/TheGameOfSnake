@@ -207,6 +207,24 @@ function setUpCanvas() {
                 break;
         }
     });
+
+    var el = document.getElementById('touch-control')
+    swipedetect(el, function (swipedir) {
+        switch (swipedir) {
+            case "up":
+                snake.newDirection = directions.up;
+                break;
+            case "right":
+                snake.newDirection = directions.right;
+                break;
+            case "down":
+                snake.newDirection = directions.down;
+                break;
+            case "left":
+                snake.newDirection = directions.left;
+                break;
+        }
+    })
 }
 
 function changeDirection(direction) {
@@ -315,3 +333,48 @@ function chooseLower(a, b) {
     }
     return a
 }
+
+/* This code comes from http://www.javascriptkit.com/javatutors/touchevents2.shtml with some small changes to fit my project */
+
+function swipedetect(el, callback) {
+
+    var touchsurface = el,
+        swipedir,
+        startX,
+        startY,
+        distX,
+        distY,
+        threshold = 50, //required min distance traveled to be considered swipe
+        restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+
+        handleswipe = callback || function (swipedir) { }
+
+    touchsurface.addEventListener('touchstart', function (e) {
+        var touchobj = e.changedTouches[0]
+        swipedir = 'none'
+        dist = 0
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        e.preventDefault()
+    }, false)
+
+    touchsurface.addEventListener('touchmove', function (e) {
+        e.preventDefault() // prevent scrolling when inside DIV
+    }, false)
+
+    touchsurface.addEventListener('touchend', function (e) {
+        var touchobj = e.changedTouches[0]
+        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // horizontal swipe met
+            swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+        }
+        else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // vertical swipe met
+            swipedir = (distY < 0) ? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+        }
+        handleswipe(swipedir)
+        e.preventDefault()
+    }, false)
+}
+
