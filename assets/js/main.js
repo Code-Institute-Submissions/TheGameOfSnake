@@ -257,6 +257,8 @@ function makeFood(snake) {
             ctx.fillStyle = "red"
             ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
             
+            decideSpeed(hasEaten);
+
             return hasEaten;
         }
     }
@@ -274,6 +276,13 @@ function reset() {
     document.getElementById('game-over-section').classList.add('invisible');
     var el = document.getElementsByClassName('background-image');
     el[0].classList.remove('grayscale');
+}
+
+function decideSpeed(hasEaten){
+    if (score % 3 == 0 && score != 0 && hasEaten) {
+        fps += 2;
+        level++
+    }
 }
 
 //Helper functions
