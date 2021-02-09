@@ -132,6 +132,11 @@ canvas{
 
 /* Controls css */
 
+
+#arrows-control{
+    margin-top: 3rem;
+}
+
 #controls i{
     background-color: white;
     border-radius: 50%;
@@ -155,12 +160,12 @@ canvas{
     background: rgba(255, 255, 255, 0.5);
     border: red solid 1px;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 .active{
     background: #fdc555 ;
-    box-shadow: 0.2rem 0.3rem 0.3rem rgb(0, 0, 0);
+    border: red solid 1px !important;
+    box-shadow: 0.2rem 0.3rem 0.3rem rgb(0, 0, 0) ; 
 }
 
 @media only screen and (min-width: 768px) and (orientation: portrait){
