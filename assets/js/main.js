@@ -131,6 +131,17 @@ window.onload = function () {
         wallsaresolid_el.classList.add('active-gamemode');
         troughthewall_el.classList.remove('active-gamemode');
     })
+
+    if (document.getElementById('score') && document.getElementById('level')) {
+        var score_el = document.createElement('p')
+        var level_el = document.createElement('p')
+
+        score_el.innerHTML = `Your score is: ${score}`
+        level_el.innerHTML = `Your level is: ${level}`
+
+        document.getElementById('score').appendChild(score_el);
+        document.getElementById('level').appendChild(level_el);
+    }
 }
 
 function setUpGame() {
@@ -147,6 +158,11 @@ function startGame() {
     snake.update(mode);
     snake.crash();
     snake.draw();
+
+    if (document.getElementById('score') && document.getElementById('level')) {
+        document.getElementById('score').firstChild.innerHTML = `Your score is: ${score}`;
+        document.getElementById('level').firstChild.innerHTML = `Your level is: ${level}`;
+    }
 
     if (!gameOVer) {
         setTimeout(function () { //throttle requestAnimationFrame to 20fps
@@ -228,7 +244,7 @@ function resizeCanvasToDisplaySize(canvas) {
 
 function makeFood(snake) {
 
-    if (((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { var hasEaten = true; score++}
+    if (((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { var hasEaten = true; score++ }
     else { var hasEaten = false }
 
     if (hasEaten == false) {
@@ -256,7 +272,7 @@ function makeFood(snake) {
 
             ctx.fillStyle = "red"
             ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
-            
+
             decideSpeed(hasEaten);
 
             return hasEaten;
@@ -278,7 +294,7 @@ function reset() {
     el[0].classList.remove('grayscale');
 }
 
-function decideSpeed(hasEaten){
+function decideSpeed(hasEaten) {
     if (score % 3 == 0 && score != 0 && hasEaten) {
         fps += 2;
         level++
