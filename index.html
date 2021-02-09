@@ -7,6 +7,8 @@
     <title>Game Of Snake</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="stylesheet" href="assets\css\style.css">
 </head>
 
@@ -25,6 +27,12 @@
 
         <section id="game-section" class="invisible">
             <canvas id="game"></canvas>
+            <div id="controls">
+                <div><span><i class="far fa-arrow-alt-circle-up" onclick="changeDirection('up')"></i></span></div>
+                <div><span><i class="far fa-arrow-alt-circle-left" onclick="changeDirection('left')"></i></span><span><i
+                            class="far fa-arrow-alt-circle-right" onclick="changeDirection('right')"></i></i></span></div>
+                <div><span><i class="far fa-arrow-alt-circle-down" onclick="changeDirection('down')"></i></span></div>
+            </div>
         </section>
 
         <section id="game-over-section" class="invisible">
