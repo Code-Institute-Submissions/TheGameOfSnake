@@ -378,3 +378,22 @@ function swipedetect(el, callback) {
     }, false)
 }
 
+function toggleControl(control){
+    if(control === "touchpad"){
+        document.getElementById("btn-touchpad").classList.add('active')
+        document.getElementById('btn-arrows').classList.remove('active')
+
+        document.getElementById('touch-control').style.display = "block";
+        document.getElementById('arrows-control').style.display = "none";
+    }
+    else{
+        document.getElementById("btn-touchpad").classList.remove('active')
+        document.getElementById('btn-arrows').classList.add('active')
+
+        document.getElementById('arrows-control').style.display = "block";
+        document.getElementById('touch-control').style.display = "none";
+
+
+    }
+}
+
