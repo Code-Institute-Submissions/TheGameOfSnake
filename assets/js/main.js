@@ -135,6 +135,9 @@ window.onload = function () {
     if (document.getElementById('score') && document.getElementById('level')) {
         var score_el = document.createElement('p')
         var level_el = document.createElement('p')
+        
+        score_el.style.fontSize = "1.5rem";
+        level_el.style.fontSize = "1.5rem";
 
         score_el.innerHTML = `Your score is: ${score}`
         level_el.innerHTML = `Your level is: ${level}`
