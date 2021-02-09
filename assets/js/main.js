@@ -94,6 +94,10 @@ var gameMode = {
     wallsaresolid: 2
 };
 
+var level = 1;
+var score = 0;
+var fps = 5;
+
 var directions = {
     up: 0,
     right: 1,
@@ -101,7 +105,6 @@ var directions = {
     left: 3
 };
 
-var fps = 5;
 var gameOVer = false;
 var speed = { xspeed: 15, yspeed: 0 };
 var head = new HeadPosition(60, 300)
@@ -156,6 +159,8 @@ function startGame() {
         document.getElementById('game-section').classList.add('invisible');
         var el = document.getElementsByClassName('background-image');
         el[0].classList.add('grayscale');
+        document.getElementById('final-level').innerHTML = level;
+        document.getElementById('final-score').innerHTML = score;
     }
 }
 
@@ -223,7 +228,7 @@ function resizeCanvasToDisplaySize(canvas) {
 
 function makeFood(snake) {
 
-    if (((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { var hasEaten = true; }
+    if (((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { var hasEaten = true; score++}
     else { var hasEaten = false }
 
     if (hasEaten == false) {
