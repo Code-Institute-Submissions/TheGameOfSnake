@@ -1,3 +1,39 @@
+class HeadPosition {
+    constructor(xpos, ypos) {
+        this.xpos = xpos,
+            this.ypos = ypos
+    };
+}
+
+//The snake Class
+
+class Snake {
+    constructor(head, body, speed, direction) {
+        this.width = 15;
+        this.height = 15;
+        this.speedX = speed.xspeed;
+        this.speedY = speed.yspeed;
+        this.head = head
+        this.body = body;
+        this.direction = direction;
+        this.newDirection = undefined;
+    }
+    update() {
+        var new_body = JSON.parse(JSON.stringify(this.head))
+        this.body.push(new_body);
+        this.body.splice(0, 1);
+        }
+    draw() {
+        ctx.fillStyle = "blue"
+        ctx.fillRect(this.head.xpos, this.head.ypos, this.width - 1, this.width - 1)
+        for (let index = 0; index < this.body.length; index++) {
+            var positions = this.body[index]
+            ctx.fillStyle = "blue"
+            ctx.fillRect(positions.xpos, positions.ypos, this.width - 1, this.height - 1)
+        }
+    }
+}
+
 var gameMode = {
     troughthewall: 1,
     wallsaresolid: 2
@@ -9,6 +45,14 @@ var directions = {
     down: 2,
     left: 3
 };
+
+var fps = 10;
+var speed = { xspeed: 15, yspeed: 0 };
+var head = new HeadPosition(60, 300)
+var body = [];
+var snake = new Snake(head, body, speed, directions.right)
+var ctx = null;
+var mode = gameMode.troughthewall;
 
 window.onload = function () {
 
@@ -33,6 +77,19 @@ function setUpGame() {
     document.getElementById('info-section').classList.add('invisible');
     document.getElementById('game-section').classList.remove('invisible');
     setUpCanvas();
+    startGame();
+}
+
+function startGame(){
+    if (ctx == null) { return; }
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    snake.update();
+    snake.draw();
+
+    setTimeout(function () { //throttle requestAnimationFrame to 20fps
+        requestAnimationFrame(startGame);
+    }, 1000 / fps)
 }
 
 function setUpCanvas() {
@@ -61,8 +118,7 @@ function setUpCanvas() {
     });
 }
 
-function changeDirection(direction)
-{
+function changeDirection(direction) {
     switch (direction) {
         case "up":
             snake.newDirection = directions.up;
