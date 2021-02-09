@@ -23,7 +23,10 @@ class Snake {
         this.body.push(new_body);
         snake.newPos()
         snake.checkWall(mode)
-        this.body.splice(0, 1);
+        var ate = makeFood(snake);
+        if (!ate) {
+            this.body.splice(0, 1);
+        }
     }
     draw() {
         ctx.fillStyle = "blue"
@@ -94,6 +97,7 @@ var gameOVer = false;
 var speed = { xspeed: 15, yspeed: 0 };
 var head = new HeadPosition(60, 300)
 var body = [];
+var food_position = ({ xpos: 75, ypos: 315 })
 var snake = new Snake(head, body, speed, directions.right)
 var ctx = null;
 var mode = gameMode.troughthewall;
@@ -198,6 +202,42 @@ function resizeCanvasToDisplaySize(canvas) {
 
     canvas.width = chooseLower((15 * ratioW), max_width);
     canvas.height = chooseLower((15 * ratioH), max_height);
+}
+
+function makeFood(snake) {
+
+    if (((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { var hasEaten = true; }
+    else { var hasEaten = false }
+
+    if (hasEaten == false) {
+        ctx.fillStyle = "red"
+        ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
+        return hasEaten
+    }
+    else {
+        var isSame = true
+
+        food_position.xpos = 1;
+        food_position.ypos = 1;
+
+        while (isSame) {
+            while (food_position.xpos % 15 != 0) {
+                while (food_position.ypos % 15 != 0) {
+                    food_position.ypos = Math.floor(Math.random() * ctx.canvas.height)
+                }
+                food_position.xpos = Math.floor(Math.random() * ctx.canvas.width)
+            }
+
+            if (snake.body.includes(food_position) || ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { isSame = true; }
+
+            isSame = false;
+
+            ctx.fillStyle = "red"
+            ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
+            
+            return hasEaten;
+        }
+    }
 }
 
 //Helper functions
