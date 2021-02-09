@@ -21,8 +21,9 @@ class Snake {
     update() {
         var new_body = JSON.parse(JSON.stringify(this.head))
         this.body.push(new_body);
+        snake.newPos()
         this.body.splice(0, 1);
-        }
+    }
     draw() {
         ctx.fillStyle = "blue"
         ctx.fillRect(this.head.xpos, this.head.ypos, this.width - 1, this.width - 1)
@@ -32,7 +33,24 @@ class Snake {
             ctx.fillRect(positions.xpos, positions.ypos, this.width - 1, this.height - 1)
         }
     }
+    newPos() {
+        if (this.direction == this.newDirection || this.newDirection == undefined) { this.speedX = this.speedX; this.speedY = this.speedY }
+        else if (this.direction == directions.up || this.direction == directions.down) {
+            if (this.newDirection == directions.up || this.newDirection == directions.down) { this.speedX = this.speedX; this.speedY = this.speedY }
+            else if (this.newDirection == directions.right) { this.speedX = 15; this.speedY = 0; this.direction = directions.right }
+            else { this.speedX = -15; this.speedY = 0; this.direction = directions.left }
+        }
+        else if (this.direction == directions.right || this.direction == directions.left) {
+            if (this.newDirection == directions.right || this.newDirection == directions.left) { this.speedX = this.speedX; this.speedY = this.speedY }
+            else if (this.newDirection == directions.up) { this.speedY = -15; this.speedX = 0; this.direction = directions.up }
+            else { this.speedY = 15; this.speedX = 0; this.direction = directions.down }
+        }
+        this.head.xpos += this.speedX;
+        this.head.ypos += this.speedY;
+        this.newDirection == undefined
+    }
 }
+
 
 var gameMode = {
     troughthewall: 1,
@@ -46,7 +64,7 @@ var directions = {
     left: 3
 };
 
-var fps = 10;
+var fps = 5;
 var speed = { xspeed: 15, yspeed: 0 };
 var head = new HeadPosition(60, 300)
 var body = [];
@@ -80,7 +98,7 @@ function setUpGame() {
     startGame();
 }
 
-function startGame(){
+function startGame() {
     if (ctx == null) { return; }
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
