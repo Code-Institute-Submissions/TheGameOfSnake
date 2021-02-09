@@ -142,7 +142,7 @@ function startGame() {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
     snake.update(mode);
-    snake.crash
+    snake.crash();
     snake.draw();
 
     if (!gameOVer) {
