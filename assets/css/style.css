@@ -58,6 +58,10 @@ h2{
     display: none;
 }
 
+.grayscale{
+filter: grayscale(100%);
+}
+
 /* Info section CSS */
 
 #info-section div{

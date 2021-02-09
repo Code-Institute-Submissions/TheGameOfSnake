@@ -150,6 +150,15 @@ function startGame() {
             requestAnimationFrame(startGame);
         }, 1000 / fps)
     }
+
+    else {
+        document.getElementById('game-over-section').classList.remove('invisible');
+        document.getElementById('game-section').classList.add('invisible');
+        var el = document.getElementsByClassName('background-image');
+        el[0].classList.add('grayscale');
+        document.getElementById('final-level').innerHTML = level;
+        document.getElementById('final-score').innerHTML = score;
+    }
 }
 
 function setUpCanvas() {
