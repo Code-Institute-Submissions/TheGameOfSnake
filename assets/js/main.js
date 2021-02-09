@@ -156,8 +156,6 @@ function startGame() {
         document.getElementById('game-section').classList.add('invisible');
         var el = document.getElementsByClassName('background-image');
         el[0].classList.add('grayscale');
-        document.getElementById('final-level').innerHTML = level;
-        document.getElementById('final-score').innerHTML = score;
     }
 }
 
@@ -257,6 +255,20 @@ function makeFood(snake) {
             return hasEaten;
         }
     }
+}
+
+function reset() {
+    gameOVer = false;
+    mode = gameMode.troughthewall;
+    document.getElementById('through-the-wall').classList.add('active-gamemode');
+    document.getElementById('walls-are-solid').classList.remove('active-gamemode');
+
+    snake = new Snake(new HeadPosition(60, 300), [], { xspeed: 15, yspeed: 0 }, directions.right)
+
+    document.getElementById('info-section').classList.remove('invisible');
+    document.getElementById('game-over-section').classList.add('invisible');
+    var el = document.getElementsByClassName('background-image');
+    el[0].classList.remove('grayscale');
 }
 
 //Helper functions
