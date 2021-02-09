@@ -87,7 +87,7 @@ function startGame(){
     snake.update();
     snake.draw();
 
-    setTimeout(function () { //throttle requestAnimationFrame to 20fps
+    setTimeout(function () { //throttle requestAnimationFrame to 10fps
         requestAnimationFrame(startGame);
     }, 1000 / fps)
 }
