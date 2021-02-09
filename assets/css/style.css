@@ -113,6 +113,10 @@ filter: grayscale(100%);
 
 /* game-section */
 
+.game-info{
+    display: none;
+}
+
 #game-section{
     position: relative;
     margin-top: 7rem;
@@ -142,6 +146,11 @@ canvas{
 @media only screen and (min-width: 1025px){
     #controls{
         display: none;
+    }
+
+    .game-info{
+        font-size: 1.5rem;
+        display: block;
     }
 }
 
