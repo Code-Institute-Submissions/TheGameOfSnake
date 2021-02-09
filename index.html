@@ -14,42 +14,47 @@
 
 <body>
     <div class="background"></div>
-        <div class="background-image"></div>
-        <header>
-            <h1>Game of Snakes</h1>
-        </header>
-        <section id="info-section">
-            <h2>Select your game mode:</h2>
-            <div id="through-the-wall" class="btn-gamemode active-gamemode"><span>Through the wall</span></div>
-            <div id="walls-are-solid" class="btn-gamemode"><span>Walls are solid</span></div>
-            <div><button class=btn-start-game onclick="setUpGame()">Start the game</button></div>
-        </section>
+    <div class="background-image"></div>
+    <header>
+        <h1>Game of Snakes</h1>
+    </header>
+    <section id="info-section">
+        <h2>Select your game mode:</h2>
+        <div id="through-the-wall" class="btn-gamemode active-gamemode"><span>Through the wall</span></div>
+        <div id="walls-are-solid" class="btn-gamemode"><span>Walls are solid</span></div>
+        <div><button class=btn-start-game onclick="setUpGame()">Start the game</button></div>
+    </section>
 
-        <section id="game-section" class="invisible">
-            <div class="game-info">
-                <div id="score"></div>
-                <div id="level"></div>
-            </div>
-            <canvas id="game"></canvas>
-            <div id="controls" class="invisible">
+    <section id="game-section" class="invisible">
+        <div class="game-info">
+            <div id="score"></div>
+            <div id="level"></div>
+        </div>
+        <canvas id="game"></canvas>
+        <div id="controls">
+            <button>Touchpad</button>
+            <button>Arrows</button>
+            <div id="arrows-control" class="invisible">
                 <div><span><i class="far fa-arrow-alt-circle-up" onclick="changeDirection('up')"></i></span></div>
                 <div><span><i class="far fa-arrow-alt-circle-left" onclick="changeDirection('left')"></i></span><span><i
-                            class="far fa-arrow-alt-circle-right" onclick="changeDirection('right')"></i></i></span></div>
+                            class="far fa-arrow-alt-circle-right" onclick="changeDirection('right')"></i></i></span>
+                </div>
                 <div><span><i class="far fa-arrow-alt-circle-down" onclick="changeDirection('down')"></i></span></div>
             </div>
             <div id="touch-control">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="game-over-section" class="invisible">
-            <div>
-                <h2>Game over!</h2>
-                <p>You reached level <span id='final-level'></span></p>
-                <p>Your score was <span id='final-score'></span></p>
-                <button class=btn-start-game onclick="reset()">Continue</button>
-            </div>
-        </section>
-    
+    <section id="game-over-section" class="invisible">
+        <div>
+            <h2>Game over!</h2>
+            <p>You reached level <span id='final-level'></span></p>
+            <p>Your score was <span id='final-score'></span></p>
+            <button class=btn-start-game onclick="reset()">Continue</button>
+        </div>
+    </section>
+
 </body>
 
 <script src="assets\js\main.js"></script>
