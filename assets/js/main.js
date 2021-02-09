@@ -3,6 +3,13 @@ var gameMode = {
     wallsaresolid: 2
 };
 
+var directions = {
+    up: 0,
+    right: 1,
+    down: 2,
+    left: 3
+};
+
 window.onload = function () {
 
     //Element listeners for GameMode buttons
@@ -34,6 +41,42 @@ function setUpCanvas() {
     //ctx.canvas.style.background = "grey";
 
     resizeCanvasToDisplaySize(ctx.canvas);
+
+    window.addEventListener("keydown", function (e) {
+
+        switch (e.key) {
+            case "ArrowUp":
+                snake.newDirection = directions.up;
+                break;
+            case "ArrowRight":
+                snake.newDirection = directions.right;
+                break;
+            case "ArrowDown":
+                snake.newDirection = directions.down;
+                break;
+            case "ArrowLeft":
+                snake.newDirection = directions.left;
+                break;
+        }
+    });
+}
+
+function changeDirection(direction)
+{
+    switch (direction) {
+        case "up":
+            snake.newDirection = directions.up;
+            break;
+        case "right":
+            snake.newDirection = directions.right;
+            break;
+        case "down":
+            snake.newDirection = directions.down;
+            break;
+        case "left":
+            snake.newDirection = directions.left;
+            break;
+    }
 }
 
 function resizeCanvasToDisplaySize(canvas) {
