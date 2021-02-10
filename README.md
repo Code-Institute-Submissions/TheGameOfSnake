@@ -168,6 +168,9 @@ https://www.conventionalcommits.org/en/v1.0.0/#summary
 https://en.wikipedia.org/wiki/Snake_(video_game_genre)
 https://www.geeksinux.com/the-elements-of-user-experience-design/ 
 http://www.javascriptkit.com/javatutors/touchevents2.shtml 
+https://www.youtube.com/channel/UCXvIGbH6QsPJYtwzQvwhFyw - how to work with the canvas
+http://technologies4.me/browse/ - how to work with the canvas and game development in general
+https://www.w3schools.com/ 
 
 
 
