@@ -222,21 +222,10 @@ function setUpCanvas() {
 
 
 function changeDirection(direction) {
-    switch (direction) {
-        case "up":
-            snake.newDirection = directions.up;
-            break;
-        case "right":
-            snake.newDirection = directions.right;
-            break;
-        case "down":
-            snake.newDirection = directions.down;
-            break;
-        case "left":
-            snake.newDirection = directions.left;
-            break;
-    }
+    var dir = direction;
+    snake.newDirection = directions[dir]
 }
+
 
 function resizeCanvasToDisplaySize(canvas) {
     // look up the size the canvas is being displayed and multiply by percentage of canvas size
