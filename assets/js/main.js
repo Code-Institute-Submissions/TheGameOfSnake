@@ -120,7 +120,11 @@ var body;
 var food_position;
 var snake;
 var ctx;
+var highScores = [];
 
+if (localStorage.getItem("highScores") !== null) {
+    highScores = JSON.parse(localStorage.getItem("highScores"))
+  }
 
 window.onload = function () {
 
@@ -154,6 +158,12 @@ window.onload = function () {
         document.getElementById('level').appendChild(level_el);
     }
 }
+
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    
+    e.returnValue = '';
+});
 
 function setUpGame() {
     document.getElementById('info-section').classList.add('invisible');
@@ -304,6 +314,9 @@ function makeFood(snake) {
 }
 
 function reset() {
+    let today = new Date()
+    highScores.push({"time": today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), "score": score, "level": level, "gamemode": mode})
+    localStorage.setItem('highScores', JSON.stringify(highScores));
     mode = gameMode.troughthewall;
     document.getElementById('through-the-wall').classList.add('active-gamemode');
     document.getElementById('walls-are-solid').classList.remove('active-gamemode');
