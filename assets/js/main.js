@@ -38,17 +38,29 @@ class Snake {
         }
     }
     newPos() {
-        if (this.direction == this.newDirection || this.newDirection == undefined) { this.speedX = this.speedX; this.speedY = this.speedY }
-        else if (this.direction == directions.up || this.direction == directions.down) {
-            if (this.newDirection == directions.up || this.newDirection == directions.down) { this.speedX = this.speedX; this.speedY = this.speedY }
-            else if (this.newDirection == directions.right) { this.speedX = 15; this.speedY = 0; this.direction = directions.right }
-            else { this.speedX = -15; this.speedY = 0; this.direction = directions.left }
+        if (!isHorizontal(this.direction)) {
+            if (this.newDirection == directions.right) {
+                this.speedX = speed.speed;
+                this.speedY = 0;
+                this.direction = directions.right
+            } else if (this.newDirection == directions.left) {
+                this.speedX = speed.speed * -1;
+                this.speedY = 0;
+                this.direction = directions.left
+            }
         }
-        else if (this.direction == directions.right || this.direction == directions.left) {
-            if (this.newDirection == directions.right || this.newDirection == directions.left) { this.speedX = this.speedX; this.speedY = this.speedY }
-            else if (this.newDirection == directions.up) { this.speedY = -15; this.speedX = 0; this.direction = directions.up }
-            else { this.speedY = 15; this.speedX = 0; this.direction = directions.down }
+        else {
+            if (this.newDirection == directions.up) {
+                this.speedY = speed.speed * -1;
+                this.speedX = 0;
+                this.direction = directions.up
+            } else if (this.newDirection == directions.down) {
+                this.speedY = speed.speed;
+                this.speedX = 0;
+                this.direction = directions.down
+            }
         }
+
         this.head.xpos += this.speedX;
         this.head.ypos += this.speedY;
         this.newDirection == undefined
@@ -57,17 +69,13 @@ class Snake {
         if (mode == gameMode.troughthewall) {
             if (this.head.xpos >= ctx.canvas.width) {
                 this.head.xpos = 0;
-            }
-            else if (this.head.xpos < 0) {
+            } else if (this.head.xpos < 0) {
                 this.head.xpos = ctx.canvas.width - 15;
-            }
-            else if (this.head.ypos >= ctx.canvas.height) {
+            } else if (this.head.ypos >= ctx.canvas.height) {
                 this.head.ypos = 0;
-            }
-            else if (this.head.ypos < 0) {
+            } else if (this.head.ypos < 0) {
                 this.head.ypos = ctx.canvas.height - 15;
-            }
-            else {
+            } else {
                 return;
             }
         }
@@ -88,7 +96,6 @@ class Snake {
     }
 }
 
-
 var gameMode = {
     troughthewall: 1,
     wallsaresolid: 2
@@ -106,7 +113,7 @@ var directions = {
 };
 
 var gameOVer = false;
-var speed = { xspeed: 15, yspeed: 0 };
+var speed = { xspeed: 15, yspeed: 0, speed: 15 };
 var head = new HeadPosition(60, 300)
 var body = [];
 var food_position = ({ xpos: 75, ypos: 315 })
@@ -135,7 +142,7 @@ window.onload = function () {
     if (document.getElementById('score') && document.getElementById('level')) {
         var score_el = document.createElement('p')
         var level_el = document.createElement('p')
-        
+
         score_el.style.fontSize = "1.5rem";
         level_el.style.fontSize = "1.5rem";
 
@@ -156,8 +163,8 @@ function setUpGame() {
 
 function startGame() {
     if (ctx == null) { return; }
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     snake.update(mode);
     snake.crash();
     snake.draw();
@@ -171,9 +178,7 @@ function startGame() {
         setTimeout(function () { //throttle requestAnimationFrame to 20fps
             requestAnimationFrame(startGame);
         }, 1000 / fps)
-    }
-
-    else {
+    } else {    
         document.getElementById('game-over-section').classList.remove('invisible');
         document.getElementById('game-section').classList.add('invisible');
         var el = document.getElementsByClassName('background-image');
@@ -264,16 +269,18 @@ function resizeCanvasToDisplaySize(canvas) {
 }
 
 function makeFood(snake) {
+    var hasEaten = false;
 
-    if (((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { var hasEaten = true; score++ }
-    else { var hasEaten = false }
+    if ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos)) {
+        hasEaten = true;
+        score++
+    }
 
     if (hasEaten == false) {
         ctx.fillStyle = "red"
         ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
         return hasEaten
-    }
-    else {
+    } else {
         var isSame = true
 
         food_position.xpos = 1;
@@ -294,7 +301,7 @@ function makeFood(snake) {
             ctx.fillStyle = "red"
             ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
 
-            decideSpeed(hasEaten);
+            decideSpeed();
 
             return hasEaten;
         }
@@ -318,20 +325,11 @@ function reset() {
     el[0].classList.remove('grayscale');
 }
 
-function decideSpeed(hasEaten) {
-    if (score % 3 == 0 && score != 0 && hasEaten) {
+function decideSpeed() {
+    if (score % 3 === 0 && score !== 0) {
         fps += 2;
         level++
     }
-}
-
-//Helper functions
-
-function chooseLower(a, b) {
-    if (a > b) {
-        return b
-    }
-    return a
 }
 
 /* This code comes from http://www.javascriptkit.com/javatutors/touchevents2.shtml with some small changes to fit my project */
@@ -378,22 +376,36 @@ function swipedetect(el, callback) {
     }, false)
 }
 
-function toggleControl(control){
-    if(control === "touchpad"){
+function toggleControl(control) {
+    if (control === "touchpad") {
         document.getElementById("btn-touchpad").classList.add('active')
         document.getElementById('btn-arrows').classList.remove('active')
 
         document.getElementById('touch-control').style.display = "block";
         document.getElementById('arrows-control').style.display = "none";
     }
-    else{
+    else {
         document.getElementById("btn-touchpad").classList.remove('active')
         document.getElementById('btn-arrows').classList.add('active')
 
         document.getElementById('arrows-control').style.display = "block";
         document.getElementById('touch-control').style.display = "none";
-
-
     }
 }
 
+//Helper functions
+
+function chooseLower(a, b) {
+    if (a > b) {
+        return b
+    }
+    return a
+}
+
+function isHorizontal(x) {
+    if (x == directions.up || x == directions.down) {
+        return false
+    } else {
+        return true;
+    };
+}
