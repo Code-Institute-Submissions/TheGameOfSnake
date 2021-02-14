@@ -214,23 +214,12 @@ function setUpCanvas() {
     });
 
     var el = document.getElementById('touch-control')
-    swipedetect(el, function (swipedir) {
-        switch (swipedir) {
-            case "up":
-                snake.newDirection = directions.up;
-                break;
-            case "right":
-                snake.newDirection = directions.right;
-                break;
-            case "down":
-                snake.newDirection = directions.down;
-                break;
-            case "left":
-                snake.newDirection = directions.left;
-                break;
-        }
+    swipedetect(el, function(swipedir) {
+        var dir = swipedir;
+        snake.newDirection = directions[dir]
     })
 }
+
 
 function changeDirection(direction) {
     switch (direction) {
