@@ -102,8 +102,8 @@ var gameMode = {
 };
 
 var level = 1;
-var score = 0;
-var fps = 5;
+var score;
+var fps;
 
 var directions = {
     up: 0,
@@ -112,14 +112,15 @@ var directions = {
     left: 3
 };
 
-var gameOVer = false;
-var speed = { xspeed: 15, yspeed: 0, speed: 15 };
-var head = new HeadPosition(60, 300)
-var body = [];
-var food_position = ({ xpos: 75, ypos: 315 })
-var snake = new Snake(head, body, speed, directions.right)
-var ctx = null;
 var mode = gameMode.troughthewall;
+var gameOVer;
+var speed;
+var head;
+var body;
+var food_position;
+var snake;
+var ctx;
+
 
 window.onload = function () {
 
@@ -158,6 +159,7 @@ function setUpGame() {
     document.getElementById('info-section').classList.add('invisible');
     document.getElementById('game-section').classList.remove('invisible');
     setUpCanvas();
+    setupGameVariables()
     startGame();
 }
 
@@ -199,18 +201,20 @@ function setUpCanvas() {
 
         switch (e.key) {
             case "ArrowUp":
-                snake.newDirection = directions.up;
+                dir = directions.up;
                 break;
             case "ArrowRight":
-                snake.newDirection = directions.right;
+                dir = directions.right;
                 break;
             case "ArrowDown":
-                snake.newDirection = directions.down;
+                dir = directions.down;
                 break;
             case "ArrowLeft":
-                snake.newDirection = directions.left;
+                dir = directions.left;
                 break;
         }
+
+        snake.newDirection = dir
     });
 
     var el = document.getElementById('touch-control')
@@ -244,6 +248,19 @@ function resizeCanvasToDisplaySize(canvas) {
 
     canvas.width = chooseLower((15 * ratioW), max_width);
     canvas.height = chooseLower((15 * ratioH), max_height);
+}
+
+function setupGameVariables(){
+    gameOVer = false;
+    speed = { xspeed: 15, yspeed: 0, speed: 15 };
+    head = new HeadPosition(60, 300)
+    body = [];
+    food_position = ({ xpos: 75, ypos: 315 })
+    snake = new Snake(head, body, speed, directions.right)
+    fps = 5;
+    level = 1;
+    score = 0;
+
 }
 
 function makeFood(snake) {
@@ -287,15 +304,9 @@ function makeFood(snake) {
 }
 
 function reset() {
-    gameOVer = false;
     mode = gameMode.troughthewall;
-    fps = 5;
-    level = 1;
-    score = 0;
     document.getElementById('through-the-wall').classList.add('active-gamemode');
     document.getElementById('walls-are-solid').classList.remove('active-gamemode');
-
-    snake = new Snake(new HeadPosition(60, 300), [], { xspeed: 15, yspeed: 0 }, directions.right)
 
     document.getElementById('info-section').classList.remove('invisible');
     document.getElementById('game-over-section').classList.add('invisible');
