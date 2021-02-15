@@ -316,13 +316,14 @@ function makeFood(snake) {
 function reset() {
 
     mode = gameMode.troughthewall;
+    
     document.getElementById('through-the-wall').classList.add('active-gamemode');
     document.getElementById('walls-are-solid').classList.remove('active-gamemode');
-
-    document.getElementById('info-section').classList.remove('invisible');
-    document.getElementById('game-over-section').classList.add('invisible');
-    var el = document.getElementsByClassName('background-image');
-    el[0].classList.remove('grayscale');
+    setTimeout(function(){ 
+        document.getElementById('info-section').classList.remove('invisible');
+        document.getElementById('game-over-section').classList.add('invisible');
+        var el = document.getElementsByClassName('background-image');
+        el[0].classList.remove('grayscale'); }, 1501);
 }
 
 function decideSpeed() {
@@ -332,6 +333,9 @@ function decideSpeed() {
     }
 }
 
+function something(){
+    
+}
 /* This code comes from http://www.javascriptkit.com/javatutors/touchevents2.shtml with some small changes to fit my project */
 
 function swipedetect(el, callback) {
