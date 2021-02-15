@@ -159,10 +159,10 @@ window.onload = function () {
     }
 }
 
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
-    
-    e.returnValue = '';
+window.addEventListener('beforeunload', function () {
+    let today = new Date()
+    highScores.push({"time": today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), "score": score, "level": level, "gamemode": mode})
+    localStorage.setItem('highScores', JSON.stringify(highScores));
 });
 
 function setUpGame() {
@@ -314,9 +314,7 @@ function makeFood(snake) {
 }
 
 function reset() {
-    let today = new Date()
-    highScores.push({"time": today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), "score": score, "level": level, "gamemode": mode})
-    localStorage.setItem('highScores', JSON.stringify(highScores));
+
     mode = gameMode.troughthewall;
     document.getElementById('through-the-wall').classList.add('active-gamemode');
     document.getElementById('walls-are-solid').classList.remove('active-gamemode');
