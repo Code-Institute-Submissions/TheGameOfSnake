@@ -1,11 +1,9 @@
 class HeadPosition {
     constructor(xpos, ypos) {
         this.xpos = xpos,
-            this.ypos = ypos
+        this.ypos = ypos
     };
 }
-
-//The snake Class
 
 class Snake {
     constructor(head, body, speed, direction) {
@@ -65,7 +63,7 @@ class Snake {
         this.head.ypos += this.speedY;
         this.newDirection == undefined
     }
-    checkWall = function (mode) {
+    checkWall(mode) {
         if (mode == gameMode.troughthewall) {
             if (this.head.xpos >= ctx.canvas.width) {
                 this.head.xpos = 0;
@@ -85,7 +83,7 @@ class Snake {
             }
         }
     }
-    crash = function () {
+    crash() {
         for (let index = 0; index < this.body.length; index++) {
             var positions = this.body[index]
             if (this.head.xpos == positions.xpos && this.head.ypos == positions.ypos) {
@@ -124,38 +122,51 @@ var highScores = [];
 
 if (localStorage.getItem("highScores") !== null) {
     highScores = JSON.parse(localStorage.getItem("highScores"))
-  }
+}
+
+var el_throughthewall = document.getElementById('through-the-wall');
+var el_wallsaresolid = document.getElementById('walls-are-solid');
+
+var el_score = document.getElementById('score');
+var el_level = document.getElementById('level');
+
+var el_infosection = document.getElementById('info-section');
+var el_gamesection = document.getElementById('game-section');
+var el_gameoversection = document.getElementById('game-over-section');
+
+var el_touchcontrol = document.getElementById('touch-control');
+
+var el_background = document.getElementsByClassName('background-image');
+
 
 window.onload = function () {
 
     //Element listeners for GameMode buttons
-    var troughthewall_el = document.getElementById('through-the-wall')
-    var wallsaresolid_el = document.getElementById('walls-are-solid')
 
-    troughthewall_el.addEventListener("click", function () {
+    el_throughthewall.addEventListener("click", function () {
         mode = gameMode.troughthewall;
-        troughthewall_el.classList.add('active-gamemode');
-        wallsaresolid_el.classList.remove('active-gamemode');
+        el_throughthewall.classList.add('active-gamemode');
+        el_wallsaresolid.classList.remove('active-gamemode');
     })
 
-    wallsaresolid_el.addEventListener("click", function () {
+    el_wallsaresolid.addEventListener("click", function () {
         mode = gameMode.wallsaresolid;
-        wallsaresolid_el.classList.add('active-gamemode');
-        troughthewall_el.classList.remove('active-gamemode');
+        el_wallsaresolid.classList.add('active-gamemode');
+        el_throughthewall.classList.remove('active-gamemode');
     })
 
-    if (document.getElementById('score') && document.getElementById('level')) {
-        var score_el = document.createElement('p')
-        var level_el = document.createElement('p')
+    if (el_score && el_level) {
+        var score_content = document.createElement('p')
+        var level_content = document.createElement('p')
 
-        score_el.style.fontSize = "1.5rem";
-        level_el.style.fontSize = "1.5rem";
+        score_content.style.fontSize = "1.5rem";
+        level_content.style.fontSize = "1.5rem";
 
-        score_el.innerHTML = `Your score is: ${score}`
-        level_el.innerHTML = `Your level is: ${level}`
+        score_content.innerHTML = `Your score is: ${score}`
+        level_content.innerHTML = `Your level is: ${level}`
 
-        document.getElementById('score').appendChild(score_el);
-        document.getElementById('level').appendChild(level_el);
+        el_score.appendChild(score_content);
+        el_level.appendChild(level_content);
     }
 }
 
@@ -166,8 +177,10 @@ window.addEventListener('beforeunload', function () {
 });
 
 function setUpGame() {
-    document.getElementById('info-section').classList.add('invisible');
-    document.getElementById('game-section').classList.remove('invisible');
+
+    el_infosection.classList.add('invisible');
+    el_gamesection.classList.remove('invisible');
+    
     setUpCanvas();
     setupGameVariables()
     startGame();
@@ -181,9 +194,9 @@ function startGame() {
     snake.crash();
     snake.draw();
 
-    if (document.getElementById('score') && document.getElementById('level')) {
-        document.getElementById('score').firstChild.innerHTML = `Your score is: ${score}`;
-        document.getElementById('level').firstChild.innerHTML = `Your level is: ${level}`;
+    if (el_score && el_level) {
+        el_score.firstChild.innerHTML = `Your score is: ${score}`;
+        el_level.firstChild.innerHTML = `Your level is: ${level}`;
     }
 
     if (!gameOVer) {
@@ -191,10 +204,9 @@ function startGame() {
             requestAnimationFrame(startGame);
         }, 1000 / fps)
     } else {    
-        document.getElementById('game-over-section').classList.remove('invisible');
-        document.getElementById('game-section').classList.add('invisible');
-        var el = document.getElementsByClassName('background-image');
-        el[0].classList.add('grayscale');
+        el_gameoversection.classList.remove('invisible');
+        el_gamesection.classList.add('invisible');
+        el_background[0].classList.add('grayscale');
         document.getElementById('final-level').innerHTML = level;
         document.getElementById('final-score').innerHTML = score;
     }
@@ -203,7 +215,6 @@ function startGame() {
 function setUpCanvas() {
     // Setting up the canvas
     ctx = document.getElementById("game").getContext("2d");
-    //ctx.canvas.style.background = "grey";
 
     resizeCanvasToDisplaySize(ctx.canvas);
 
@@ -223,12 +234,10 @@ function setUpCanvas() {
                 dir = directions.left;
                 break;
         }
-
         snake.newDirection = dir
     });
 
-    var el = document.getElementById('touch-control')
-    swipedetect(el, function(swipedir) {
+    swipedetect(el_touchcontrol, function(swipedir) {
         var dir = swipedir;
         snake.newDirection = directions[dir]
     })
@@ -270,7 +279,6 @@ function setupGameVariables(){
     fps = 5;
     level = 1;
     score = 0;
-
 }
 
 function makeFood(snake) {
@@ -317,13 +325,12 @@ function reset() {
 
     mode = gameMode.troughthewall;
     
-    document.getElementById('through-the-wall').classList.add('active-gamemode');
-    document.getElementById('walls-are-solid').classList.remove('active-gamemode');
+    el_throughthewall.classList.add('active-gamemode');
+    el_wallsaresolid.classList.remove('active-gamemode');
     setTimeout(function(){ 
-        document.getElementById('info-section').classList.remove('invisible');
-        document.getElementById('game-over-section').classList.add('invisible');
-        var el = document.getElementsByClassName('background-image');
-        el[0].classList.remove('grayscale'); }, 1501);
+        el_infosection.classList.remove('invisible');
+        el_gameoversection.classList.add('invisible');
+        el_background[0].classList.remove('grayscale'); }, 1501);
 }
 
 function decideSpeed() {
@@ -333,11 +340,7 @@ function decideSpeed() {
     }
 }
 
-function something(){
-    
-}
-/* This code comes from http://www.javascriptkit.com/javatutors/touchevents2.shtml with some small changes to fit my project */
-
+// This code comes from http://www.javascriptkit.com/javatutors/touchevents2.shtml with some small changes to fit my project 
 function swipedetect(el, callback) {
 
     var touchsurface = el,
@@ -381,19 +384,25 @@ function swipedetect(el, callback) {
 }
 
 function toggleControl(control) {
-    if (control === "touchpad") {
-        document.getElementById("btn-touchpad").classList.add('active')
-        document.getElementById('btn-arrows').classList.remove('active')
+    let el_btntouchpad = document.getElementById("btn-touchpad");
+    let el_btnarrows = document.getElementById('btn-arrows');
 
-        document.getElementById('touch-control').style.display = "block";
-        document.getElementById('arrows-control').style.display = "none";
+
+    let el_buttoncontrol = document.getElementById('arrows-control');
+    
+    if (control === "touchpad") {
+        el_btntouchpad.classList.add('active')
+        el_btnarrows.classList.remove('active')
+
+        el_touchcontrol.style.display = "block";
+        el_buttoncontrol.style.display = "none";
     }
     else {
-        document.getElementById("btn-touchpad").classList.remove('active')
-        document.getElementById('btn-arrows').classList.add('active')
+        el_btntouchpad.classList.remove('active')
+        el_btnarrows.classList.add('active')
 
-        document.getElementById('arrows-control').style.display = "block";
-        document.getElementById('touch-control').style.display = "none";
+        el_buttoncontrol.style.display = "block";
+        el_touchcontrol.style.display = "none";
     }
 }
 
