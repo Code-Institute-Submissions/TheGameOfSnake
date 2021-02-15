@@ -61,7 +61,7 @@ h2{
     right:0px;
     left:0px;
     height: 100vh;
-    background: linear-gradient(#fafaff, #fdc555 );
+    background: linear-gradient( #fdc555, #fafaff );
     z-index: -2;
 }
 
@@ -95,7 +95,8 @@ h2{
 }
 
 .grayscale{
-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.3;
 }
 
 /* Info section CSS */
@@ -139,13 +140,37 @@ filter: grayscale(100%);
     color: #12355B;
 }
 
+#game-over-section h2{
+    color: red;
+}
+
 #game-over-section p,
 #game-over-section span{
     margin-top: 2.5rem;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
+table{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    justify-content: center;
+    display: flex;
+}
+
+table th{
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 1rem;
+    color: red;
+    text-align: left;
+}
+
+table td{
+    font-size: 1rem;
+    font-weight: 800;
+}
 
 /* game-section */
 
@@ -216,6 +241,15 @@ canvas{
         font-size: 1.5rem;
         display: block;
     }
+    
+    table th{
+        font-size: 2rem;
+    }
+    
+    table td{
+        font-size: 1.5rem;
+    }
+
 }
 
 @media only screen and (min-width: 1025px){
@@ -231,6 +265,17 @@ canvas{
     .game-info{
         font-size: 1.5rem;
         display: block;
+    }
+
+    table{
+        margin-bottom: 2.5rem;
+    }
+    table th{
+        font-size: 2rem;
+    }
+    
+    table td{
+        font-size: 1.5rem;
     }
 }
 
