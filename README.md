@@ -1,7 +1,13 @@
 # The Game Of Snake
-<hr>
-## picture of the game + link to live version
-<hr>
+
+<img src="docs/misc/mockup_finished_poduct.png"
+     alt="Website on different platforms"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
+
+#### Access the project
+**Live:** Click [here](https://dutchie1990.github.io/TheGameOfSnake/) to access the live website.
+
+**Repository:** Click [here](https://github.com/Dutchie1990/TheGameOfSnake) to access the GitHub project.
 
 # Table Of Contents
 - [Project goal](#Project-goal)
