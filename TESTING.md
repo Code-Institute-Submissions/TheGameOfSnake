@@ -41,53 +41,87 @@ As a returning user, my performance is stored in the local storage. So my own pe
 
 # Feature Testing
 
-- Game mode feature
+### Game mode feature
 
 The game should be played at two game modes which can be selected before starting the game. The following points are tested:
 
-    - selection game mode 
+- selection game mode 
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-selection-1.png)
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-selection-2.png)
 
-    - game play with different game modes
-
-        - trough the wall
+- game play with different game modes
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-1-demo.gif)
-
-
-        - walls are solid
-
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-2-demo.gif)
 
-    - showing gamemode in the highscore table
+- showing gamemode in the highscore table
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-in-highscore.png)
 
-
-    - reset of gamemode when returning to start screen
+- reset of gamemode when returning to start screen
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/reset-gamemode.gif)
 
 
+### Game feature
 
-- Game feature
+- if ate the snake size should increase 1 
+- when ate food, the score should increase by 1 
+- when hitting own body, game should be game-over 
 
-- Control feature
+### Control feature
 
-- Game over feature
+- at desktop arrow keys must be used as navigation
+- at tablets arrows and touchpad are visible 
+- at mobile arrows and touchpad are visible 
 
-- Welcome screen feature
+- pressing right snake direction should be change to right, when snake moves vertical
+- pressing left snake direction should be change to left, when snake moves vertical
+- pressing up snake direction should be change to up, when snake moves horizontal
+- pressing down snake direction should be change to down, when snake moves horizontal
+- pressing same direction, nothing should change
+- pressing opposite direction, nothing shoul change
 
-- Levels feature
+- pressing other keys 
 
-- Scoreboard feature
+### Game over feature
 
-- Animate screen transition
+- the score and level is presented to the user 
+- the continue button is clickable to return to start game screen
+- highscores are rendered into table
 
-- Leader board feature
+### Welcome screen feature
+
+- welcome animation is fired when starting the website  
+- welcome animation is done, and buttons are clickable
+
+### Levels feature
+
+- after each 3 food eaten, the snake should increase level and the speed has to be increased
+
+### Scoreboard feature
+
+- 3 highest scores will be shown in the scoreboard
+- scores will be saved to local storage when leaving the page 
+- sores will be rendered when starting the game
+
+### Animate screen transition
+
+- screen transition will start when hit the continue button
+- screen transition will end and all buttons are clickable again
+
+### Leader board feature
 
 This feature is left to be implemented. For this feature to track scores of different users on different devices, databases are needed. Using this technology is not part of this assignment of Code Institute. 
 
-- Swipe control feature
+### Swipe control feature
+
+- the swipe control can be selected 
+- swiping right snake direction should be change to right, when snake moves vertical
+- swiping left snake direction should be change to left, when snake moves vertical
+- swiping up snake direction should be change to up, when snake moves horizontal
+- swiping down snake direction should be change to down, when snake moves horizontal
+- swipe same direction, nothing should change
+- swipe opposite direction, nothing shoul change
+
