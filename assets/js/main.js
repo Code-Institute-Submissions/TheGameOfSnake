@@ -27,11 +27,11 @@ class Snake {
         }
     }
     draw() {
-        ctx.fillStyle = "blue"
+        ctx.fillStyle = "black"
         ctx.fillRect(this.head.xpos, this.head.ypos, this.width - 1, this.width - 1)
         for (let index = 0; index < this.body.length; index++) {
             var positions = this.body[index]
-            ctx.fillStyle = "blue"
+            ctx.fillStyle = "rgba(0,0,0,0.5)" 
             ctx.fillRect(positions.xpos, positions.ypos, this.width - 1, this.height - 1)
         }
     }
@@ -308,7 +308,7 @@ function makeFood(snake) {
     }
 
     if (hasEaten == false) {
-        ctx.fillStyle = "red"
+        ctx.fillStyle = "#660000"
         ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
         return hasEaten
     } else {
@@ -329,7 +329,7 @@ function makeFood(snake) {
 
             isSame = false;
 
-            ctx.fillStyle = "red"
+            ctx.fillStyle = "#660000"
             ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15)
 
             decideSpeed();
