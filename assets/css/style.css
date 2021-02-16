@@ -197,16 +197,16 @@ canvas{
 
 
 #arrows-control{
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 #controls i{
-    border: black solid 1px;
+    border: black solid 2px;
     border-radius: 15%;
-    padding:0.5rem;
-    margin-right: 2em;
-    margin-left: 2em;
-    font-size: 3rem;
+    padding: 1rem;
+    margin-right: 3em;
+    margin-left: 3em;
+    font-size: 2rem;
 }
 
 #touch-control{
