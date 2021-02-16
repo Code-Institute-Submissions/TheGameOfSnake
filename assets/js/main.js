@@ -237,7 +237,8 @@ function setUpCanvas() {
     resizeCanvasToDisplaySize(ctx.canvas);
 
     window.addEventListener("keydown", function (e) {
-
+        var dir;
+        
         switch (e.key) {
             case "ArrowUp":
                 dir = directions.up;
@@ -251,8 +252,11 @@ function setUpCanvas() {
             case "ArrowLeft":
                 dir = directions.left;
                 break;
+            case "default":
+                break;
         }
-        snake.newDirection = dir
+        console.log(dir);
+        if (dir !== undefined){snake.newDirection = dir}
     });
 
     swipedetect(el_touchcontrol, function (swipedir) {
@@ -290,9 +294,9 @@ function resizeCanvasToDisplaySize(canvas) {
 function setupGameVariables() {
     gameOVer = false;
     speed = { xspeed: 15, yspeed: 0, speed: 15 };
-    head = new HeadPosition(60, 300)
+    head = new HeadPosition(ctx.canvas.width/2, ctx.canvas.height / 2)
     body = [];
-    food_position = ({ xpos: 75, ypos: 315 })
+    food_position = ({ xpos: 75, ypos: 75 })
     snake = new Snake(head, body, speed, directions.right)
     fps = 5;
     level = 1;
