@@ -354,7 +354,7 @@ function reset() {
 
 function decideSpeed() {
     if (score % 3 === 0 && score !== 0) {
-        fps += 2;
+        fps += 1;
         level++
     }
 }
