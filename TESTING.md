@@ -3,15 +3,25 @@
 [return to README.md](https://github.com/Dutchie1990/TheGameOfSnake)
 
 # Table of Content 
-- [User Story Testing]
-- [Feature Testing]
-- [Validators]
-    - [HTML Validator]
-    - [CSS Validator]
-    - [Javascript Validator]
-- [Further Manual Testing]
-    - [Lighthouse]
-    - [amiresponsive]
+- [User Story Testing](#User-Story-Testing)
+- [Feature Testing](#Feature-Testing)
+    - [Game mode feature](#Game-mode-feature)
+    - [Game feature](#Game-feature)
+    - [Control feature](#Control-feature)
+    - [Game over feature](#Game-over-feature)
+    - [Welcome screen feature](#Welcome-screen-feature)
+    - [Levels feature](#Levels-feature)
+    - [Scoreboard feature](#Scoreboard-feature)
+    - [Animate screen transition](#Animate-screen-transition)
+    - [Leader board feature](#Leader-board-feature)
+    - [Swipe control feature](#Swipe-control-feature)
+- [Validators](#Validators)
+    - [HTML Validator](HTML-Validator)
+    - [CSS Validator](#CSS-Validator)
+    - [Javascript Validator](#Javascript-Validator)
+- [Further Manual Testing](#Further-Manual-Testing)
+    - [Lighthouse](#Lighthouse)
+    - [amiresponsive](#amiresponsive)
 
 # User Story Testing 
 
@@ -98,7 +108,8 @@ The game should be played at two game modes which can be selected before startin
 
 ### Levels feature
 
-- after each 3 food eaten, the snake should increase level and the speed has to be increased
+- after each 3 food eaten, the snake should increase level 
+- when increase level speed should be increased
 
 ### Scoreboard feature
 
@@ -125,3 +136,10 @@ This feature is left to be implemented. For this feature to track scores of diff
 - swipe same direction, nothing should change
 - swipe opposite direction, nothing shoul change
 
+# Validators
+### [HTML Validator]
+### [CSS Validator]
+### [Javascript Validator]
+# Further Manual Testing
+### [Lighthouse]
+### [amiresponsive]
