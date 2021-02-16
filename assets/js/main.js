@@ -1,7 +1,7 @@
 class HeadPosition {
     constructor(xpos, ypos) {
         this.xpos = xpos,
-        this.ypos = ypos
+            this.ypos = ypos
     };
 }
 
@@ -120,6 +120,7 @@ var snake;
 var ctx;
 var highScores = [];
 
+
 if (localStorage.getItem("highScores") !== null) {
     highScores = JSON.parse(localStorage.getItem("highScores"))
 }
@@ -137,6 +138,7 @@ var el_gameoversection = document.getElementById('game-over-section');
 var el_touchcontrol = document.getElementById('touch-control');
 
 var el_background = document.getElementsByClassName('background-image');
+var el_table = document.getElementById("score-table");
 
 
 window.onload = function () {
@@ -171,16 +173,16 @@ window.onload = function () {
 }
 
 window.addEventListener('beforeunload', function () {
-    let today = new Date()
-    highScores.push({"time": today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate(), "score": score, "level": level, "gamemode": mode})
-    localStorage.setItem('highScores', JSON.stringify(highScores));
+    if (highScores.length > 0) {
+        localStorage.setItem('highScores', JSON.stringify(highScores));
+    }
 });
 
 function setUpGame() {
 
     el_infosection.classList.add('invisible');
     el_gamesection.classList.remove('invisible');
-    
+
     setUpCanvas();
     setupGameVariables()
     startGame();
@@ -203,7 +205,24 @@ function startGame() {
         setTimeout(function () { //throttle requestAnimationFrame to 20fps
             requestAnimationFrame(startGame);
         }, 1000 / fps)
-    } else {    
+    } else {
+
+        let today = new Date()
+
+        highScores.push({ "time": today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(), "score": score, "level": level, "gamemode": mode })
+        
+
+        var tableRows = el_table.getElementsByTagName('tr');
+        var rowCount = tableRows.length;
+
+        for (var x=rowCount; x>0; x--) {
+            el_table.deleteRow(tableRows[x]);
+        }
+
+        generateTable(el_table, highScores)
+        let data = Object.keys(highScores[0]);
+        generateTableHead(el_table, data)
+
         el_gameoversection.classList.remove('invisible');
         el_gamesection.classList.add('invisible');
         el_background[0].classList.add('grayscale');
@@ -237,7 +256,7 @@ function setUpCanvas() {
         snake.newDirection = dir
     });
 
-    swipedetect(el_touchcontrol, function(swipedir) {
+    swipedetect(el_touchcontrol, function (swipedir) {
         var dir = swipedir;
         snake.newDirection = directions[dir]
     })
@@ -269,7 +288,7 @@ function resizeCanvasToDisplaySize(canvas) {
     canvas.height = chooseLower((15 * ratioH), max_height);
 }
 
-function setupGameVariables(){
+function setupGameVariables() {
     gameOVer = false;
     speed = { xspeed: 15, yspeed: 0, speed: 15 };
     head = new HeadPosition(60, 300)
@@ -324,13 +343,14 @@ function makeFood(snake) {
 function reset() {
 
     mode = gameMode.troughthewall;
-    
+
     el_throughthewall.classList.add('active-gamemode');
     el_wallsaresolid.classList.remove('active-gamemode');
-    setTimeout(function(){ 
+    setTimeout(function () {
         el_infosection.classList.remove('invisible');
         el_gameoversection.classList.add('invisible');
-        el_background[0].classList.remove('grayscale'); }, 1501);
+        el_background[0].classList.remove('grayscale');
+    }, 1501);
 }
 
 function decideSpeed() {
@@ -389,7 +409,7 @@ function toggleControl(control) {
 
 
     let el_buttoncontrol = document.getElementById('arrows-control');
-    
+
     if (control === "touchpad") {
         el_btntouchpad.classList.add('active')
         el_btnarrows.classList.remove('active')
@@ -403,6 +423,34 @@ function toggleControl(control) {
 
         el_buttoncontrol.style.display = "block";
         el_touchcontrol.style.display = "none";
+    }
+}
+
+function generateTableHead(el_table, data) {
+    let thead = el_table.createTHead();
+    let row = thead.insertRow();
+    for (let key of data) {
+        let th = document.createElement("th");
+        let text = document.createTextNode(key.toUpperCase());
+        th.appendChild(text);
+        row.appendChild(th);
+    }
+}
+
+function generateTable(table, highScores) {
+
+    highScores.sort(function (a, b) { return a.score - b.score });
+    highScores.reverse();
+
+    let shown_results = (highScores.length < 3) ? highScores.length : 3;
+
+    for (let i = 0; i < shown_results; i++) {
+        let row = table.insertRow();
+        for (key in highScores[i]) {
+            let cell = row.insertCell();
+            let text = document.createTextNode(highScores[i][key]);
+            cell.appendChild(text);
+        }
     }
 }
 
