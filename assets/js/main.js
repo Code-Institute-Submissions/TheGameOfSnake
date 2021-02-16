@@ -220,8 +220,7 @@ function startGame() {
         }
 
         generateTable(el_table, highScores)
-        let data = Object.keys(highScores[0]);
-        generateTableHead(el_table, data)
+        generateTableHead(el_table)
 
         el_gameoversection.classList.remove('invisible');
         el_gamesection.classList.add('invisible');
@@ -426,9 +425,12 @@ function toggleControl(control) {
     }
 }
 
-function generateTableHead(el_table, data) {
+function generateTableHead(el_table) {
+    let data = Object.keys(highScores[0]);
+
     let thead = el_table.createTHead();
     let row = thead.insertRow();
+
     for (let key of data) {
         let th = document.createElement("th");
         let text = document.createTextNode(key.toUpperCase());
@@ -448,8 +450,15 @@ function generateTable(table, highScores) {
         let row = table.insertRow();
         for (key in highScores[i]) {
             let cell = row.insertCell();
-            let text = document.createTextNode(highScores[i][key]);
-            cell.appendChild(text);
+            if(key !== "gamemode") {
+                let text = document.createTextNode(highScores[i][key]);
+                cell.appendChild(text);
+            } else{
+                let text = document.createTextNode((highScores[i][key] === 1) ? "Through the walls" : "Walls are solid")
+                cell.appendChild(text);
+            }
+            
+            
         }
     }
 }
