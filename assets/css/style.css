@@ -140,6 +140,10 @@ h2{
     color: #12355B;
 }
 
+#game-over-section div{
+   display: inline-block;
+}
+
 #game-over-section h2{
     color: red;
 }
