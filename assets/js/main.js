@@ -237,7 +237,6 @@ function setUpCanvas() {
     resizeCanvasToDisplaySize(ctx.canvas);
 
     window.addEventListener("keydown", function (e) {
-        var dir;
         
         switch (e.key) {
             case "ArrowUp":
@@ -294,7 +293,7 @@ function resizeCanvasToDisplaySize(canvas) {
 function setupGameVariables() {
     gameOVer = false;
     speed = { xspeed: 15, yspeed: 0, speed: 15 };
-    head = new HeadPosition(ctx.canvas.width/2, ctx.canvas.height / 2)
+    head = new HeadPosition(15 * (Math.floor((ctx.canvas.width/2) / 15)), 15 * (Math.floor((ctx.canvas.height/2) / 15)))
     body = [];
     food_position = ({ xpos: 75, ypos: 75 })
     snake = new Snake(head, body, speed, directions.right)
