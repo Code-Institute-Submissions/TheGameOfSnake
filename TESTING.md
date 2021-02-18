@@ -55,53 +55,68 @@ As a returning user, my performance is stored in the local storage. So my own pe
 
 The game should be played at two game modes which can be selected before starting the game. The following points are tested:
 
-- selection game mode 
+- selection game mode - OK 
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-selection-1.png)
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-selection-2.png)
 
-- game play with different game modes
+- game play with different game modes - NOK
+    BUG 1: when playing walls are solid game mode, on the right and upper side of the screen the gameover comes 15 pixel to soon.
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-1-demo.gif)
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-2-demo.gif)
 
-- showing gamemode in the highscore table
+- showing gamemode in the highscore table - OK
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-in-highscore.png)
 
-- reset of gamemode when returning to start screen
+- reset of gamemode when returning to start screen - OK
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/reset-gamemode.gif)
 
 
 ### Game feature
 
-- when ate food, the score should increase by 1 
+- when ate food, the score should increase by 1 - OK
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-1.gif)
 
-- when hitting own body, game should be game-over 
+- when hitting own body, game should be game-over - OK
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-2.gif)
 
-- when food is eaten, new food will be spawned
+- when food is eaten, new food will be spawned - NOK
+    BUG 2: in some cases the food is spawned at the snakes body
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-3.gif)
 
 ### Control feature
 
-- at desktop arrow keys must be used as navigation
-- at tablets arrows and touchpad are visible 
-- at mobile arrows and touchpad are visible 
+- at desktop arrow keys must be used as navigation - OK
+- at desktop control elements are not visible - OK
 
-- pressing right snake direction should be change to right, when snake moves vertical
-- pressing left snake direction should be change to left, when snake moves vertical
-- pressing up snake direction should be change to up, when snake moves horizontal
-- pressing down snake direction should be change to down, when snake moves horizontal
-- pressing same direction, nothing should change
-- pressing opposite direction, nothing shoul change
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/desktop-control.png)
 
-- pressing other keys 
+- at tablets arrows and touchpad are visible - OK
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/tablet-control.png)
+
+- at mobile arrows and touchpad are visible - OK
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/mobile-control.png)
+
+- pressing right snake direction should be change to right, when snake moves vertical - OK 
+- pressing left snake direction should be change to left, when snake moves vertical - OK
+- pressing up snake direction should be change to up, when snake moves horizontal - OK
+- pressing down snake direction should be change to down, when snake moves horizontal - OK
+- pressing same direction, nothing should change - OK 
+- pressing opposite direction, nothing shoul change - OK 
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-control/control-1.gif)
+
+- pressing other keys - NOK
+
+    BUG 3: when you hit a key different then arrows at the first key, reference exception is thrown
 
 ### Game over feature
 
