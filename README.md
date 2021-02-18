@@ -1,6 +1,6 @@
 # The Game Of Snake
 
-<img src="docs/misc/mockup_finished_poduct.png"
+<img src="docs\misc\mockup_finished_product.png"
      alt="Website on different platforms"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
