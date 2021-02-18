@@ -163,14 +163,28 @@ The game should be played at two game modes which can be selected before startin
 
 ### Scoreboard feature
 
-- 3 highest scores will be shown in the scoreboard
-- scores will be saved to local storage when leaving the page 
-- sores will be rendered when starting the game
+- 3 highest scores will be shown in the scoreboard - OK
+
+
+
+- scores will be saved to local storage when leaving the page - OK
+
+<img src="docs\misc\testing-highscores\local-storages.png"
+     alt="score and highscore and level are rendered"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
+
+- sores will be loaded into highScores variable when starting the game - OK 
+
+<img src="docs\misc\testing-highscores\loaded-highscores.png"
+     alt="score and highscore and level are rendered"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 ### Animate screen transition
 
-- screen transition will start when hit the continue button
-- screen transition will end and all buttons are clickable again
+- screen transition will start when hit the continue button - OK
+- screen transition will end and all buttons are clickable again - OK 
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game-over/game-over-1.gif)
 
 ### Leader board feature
 
@@ -185,6 +199,8 @@ This feature is left to be implemented. For this feature to track scores of diff
 - swiping down snake direction should be change to down, when snake moves horizontal
 - swipe same direction, nothing should change
 - swipe opposite direction, nothing shoul change
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs\misc/testing-swipe-control/swipe-control-1.gif)
 
 # Validators
 ### [HTML Validator]
