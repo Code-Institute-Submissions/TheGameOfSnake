@@ -66,6 +66,7 @@ The game should be played at two game modes which can be selected before startin
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - game play with different game modes - NOK
+
     BUG 1: when playing walls are solid game mode, on the right and upper side of the screen the gameover comes 15 pixel to soon.
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-1-demo.gif)
@@ -93,6 +94,7 @@ The game should be played at two game modes which can be selected before startin
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-2.gif)
 
 - when food is eaten, new food will be spawned - NOK
+
     BUG 2: in some cases the food is spawned at the snakes body
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-3.gif)
@@ -133,9 +135,17 @@ The game should be played at two game modes which can be selected before startin
 
 ### Game over feature
 
-- the score and level is presented to the user 
-- the continue button is clickable to return to start game screen
-- highscores are rendered into table
+
+- the continue button is clickable to return to start game screen - OK
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game-over/game-over-1.gif)
+
+- highscores are rendered into table - OK
+- the score and level is presented to the user - OK
+
+<img src="docs\misc\testing-game-over\scores-highscore.png"
+     alt="score and highscore and level are rendered"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 ### Welcome screen feature
 
