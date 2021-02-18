@@ -57,8 +57,13 @@ The game should be played at two game modes which can be selected before startin
 
 - selection game mode - OK 
 
-![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-selection-1.png)
-![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-selection-2.png)
+<img src="docs/misc/testing-gamemode/game-mode-selection-1.png"
+     alt="game mode selections"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
+
+<img src="docs/misc/testing-gamemode/game-mode-selection-2.png"
+     alt="game mode selections"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - game play with different game modes - NOK
     BUG 1: when playing walls are solid game mode, on the right and upper side of the screen the gameover comes 15 pixel to soon.
@@ -68,7 +73,9 @@ The game should be played at two game modes which can be selected before startin
 
 - showing gamemode in the highscore table - OK
 
-![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-in-highscore.png)
+<img src="docs/misc/testing-gamemode/game-mode-in-highscore.png"
+     alt="game mode shown in highscore table"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - reset of gamemode when returning to start screen - OK
 
@@ -95,15 +102,21 @@ The game should be played at two game modes which can be selected before startin
 - at desktop arrow keys must be used as navigation - OK
 - at desktop control elements are not visible - OK
 
-![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/desktop-control.png)
+<img src="docs\misc\testing-control\desktop-control.png"
+     alt="desktop at mobile devices"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - at tablets arrows and touchpad are visible - OK
 
-![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/tablet-control.png)
+<img src="docs\misc\testing-control\tablet-control.png"
+     alt="tablet at mobile devices"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - at mobile arrows and touchpad are visible - OK
 
-![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/mobile-control.png)
+<img src="docs\misc\testing-control\mobile-control.png"
+     alt="controls at mobile devices"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - pressing right snake direction should be change to right, when snake moves vertical - OK 
 - pressing left snake direction should be change to left, when snake moves vertical - OK
