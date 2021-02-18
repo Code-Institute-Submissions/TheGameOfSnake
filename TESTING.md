@@ -76,9 +76,17 @@ The game should be played at two game modes which can be selected before startin
 
 ### Game feature
 
-- if ate the snake size should increase 1 
 - when ate food, the score should increase by 1 
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-1.gif)
+
 - when hitting own body, game should be game-over 
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-2.gif)
+
+- when food is eaten, new food will be spawned
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-3.gif)
 
 ### Control feature
 
