@@ -204,8 +204,19 @@ This feature is left to be implemented. For this feature to track scores of diff
 
 # Validators
 ### [HTML Validator]
+
+
+
 ### [CSS Validator]
+
+
+
 ### [Javascript Validator]
+
+
+
+
+
 # Further Manual Testing
 ### [Lighthouse]
 ### [amiresponsive]

@@ -105,6 +105,10 @@ h2{
     margin-top: 7rem;
 }
 
+.info-header{
+    display: none;
+}
+
 .btn-gamemode span{
     padding:1rem;
     font-size: 1.5rem;
@@ -181,6 +185,10 @@ table td{
     display: none;
 }
 
+.game-info-header{
+    display: none;
+}
+
 #game-section{
     position: relative;
     margin-top: 2rem;
@@ -234,11 +242,17 @@ canvas{
 
 @media only screen and (min-width: 768px) and (orientation: portrait){
     #game-section{
-        margin-top: 12rem;
+        margin-top: 5rem;
     }
 
     #controls i{
-        font-size: 5rem;
+        font-size: 3rem;
+        padding:0.5rem;
+    }
+
+    #touch-control {
+        width: 50%;
+        height: 15vh;
     }
 
     .game-info{
@@ -266,9 +280,8 @@ canvas{
         margin-top: 12rem;
     }
 
-    .game-info{
-        font-size: 1.5rem;
-        display: block;
+    .info-header{
+        display: none;
     }
 
     table{
@@ -280,6 +293,15 @@ canvas{
     
     table td{
         font-size: 1.5rem;
+    }
+
+    .game-info{
+        font-size: 1.5rem;
+        display: block;
+    }
+    
+    .game-info-header{
+        display: block;
     }
 }
 
