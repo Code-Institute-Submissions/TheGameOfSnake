@@ -149,13 +149,17 @@ The game should be played at two game modes which can be selected before startin
 
 ### Welcome screen feature
 
-- welcome animation is fired when starting the website  
-- welcome animation is done, and buttons are clickable
+- welcome animation is fired when starting the website - OK
+- welcome animation is done, and buttons are clickable - OK 
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-welcome-animation/animation-1.gif)
 
 ### Levels feature
 
 - after each 3 food eaten, the snake should increase level 
 - when increase level speed should be increased
+
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-levels/levels-1.gif)
 
 ### Scoreboard feature
 

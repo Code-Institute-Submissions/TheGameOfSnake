@@ -107,20 +107,20 @@ The wireframes are made to decide how the project must look like on different de
 
 ### Desktop design
 
-- Start page - click [here](docs\wireframes\desktop\Desktop-GameOfSnake-StartPage.png)
-- Game page - click [here](docs\wireframes\desktop\Desktop-GameOfSnake-GamePage.png)
-- Game over page - click [here](docs\wireframes\desktop\Desktop-GameOfSnake-GameOverPage.png)
+- Start page - click [here](docs/wireframes/desktop/Desktop-GameOfSnake-StartPage.png)
+- Game page - click [here](docs/wireframes/desktop/Desktop-GameOfSnake-GamePage.png)
+- Game over page - click [here](docs/wireframes/desktop/Desktop-GameOfSnake-GameOverPage.png)
 
 ### Tablet design
 
-- Start page - click [here](docs\wireframes\tablet\Ipad-GameOfSnake-StartPage.png)
-- Game page - click [here](docs\wireframes\tablet\Ipad-GameOfSnake-Gamepage.png)
-- Game over page - click [here](docs\wireframes\tablet\Ipad-GameOfSnake-GameOverPage.png) 
+- Start page - click [here](docs/wireframes/tablet/Ipad-GameOfSnake-StartPage.png)
+- Game page - click [here](docs/wireframes/tablet/Ipad-GameOfSnake-Gamepage.png)
+- Game over page - click [here](docs/wireframes/tablet/Ipad-GameOfSnake-GameOverPage.png) 
 ### Phone design
 
-- Start page - click [here](docs\wireframes\phone\Phone-GameOfSnake-StartPage.png)
-- Game page - click [here](docs\wireframes\phone\Phone-GameOfSnake-GamePage.png)
-- Game over page - click [here](docs\wireframes\phone\Phone-GameOfSnake-GameOverPage.png) 
+- Start page - click [here](docs/wireframes/phone/Phone-GameOfSnake-StartPage.png)
+- Game page - click [here](docs/wireframes/phone/Phone-GameOfSnake-GamePage.png)
+- Game over page - click [here](docs/wireframes/phone/Phone-GameOfSnake-GameOverPage.png) 
 
 ## Surface
 The goal of the site is to give the user a relaxing moment to mesmerize about the old days while enjoying the game of snake. The design will be simple with warm colours.
