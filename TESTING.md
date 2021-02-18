@@ -221,16 +221,17 @@ After fixing the issues:
      alt="first css validate result"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
-
-
 ### Javascript Validator
 
 <img src="docs\misc\validators\JS-validator.png"
      alt="JS validate result"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
+<img src="docs\misc\validators\JS-validator-animate.png"
+     alt="JS validate result"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
-
+When the variable tl and gsap are initialized the animation will not show anymore. So I accepted this warnings.
 
 # Further Manual Testing
 ### [Lighthouse]

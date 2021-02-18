@@ -29,5 +29,5 @@ document.getElementById("game-over-button").addEventListener('click', function()
     tl.to(".animation1", {display:"none", duration: 0.1});
     tl.to(".animation3", {display:"none", duration: 0.1}, "-=0.1");
 
-})
+});
 
