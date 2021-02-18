@@ -203,7 +203,7 @@ This feature is left to be implemented. For this feature to track scores of diff
 ![Browse](docs\misc\testing-swipe-control\swipe-control-1.gif)
 
 # Validators
-### [HTML Validator]
+### HTML Validator
 
 <img src="docs\misc\validators\html-validator-1.png"
      alt="first html validate result"
@@ -215,7 +215,7 @@ After fixing the issues:
      alt="second html validate result"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
-### [CSS Validator]
+### CSS Validator
 
 <img src="docs\misc\validators\css-1.png"
      alt="first css validate result"
@@ -223,7 +223,8 @@ After fixing the issues:
 
 
 
-### [Javascript Validator]
+### Javascript Validator
+
 
 
 
