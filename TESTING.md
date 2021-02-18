@@ -225,7 +225,9 @@ After fixing the issues:
 
 ### Javascript Validator
 
-
+<img src="docs\misc\validators\JS-validator.png"
+     alt="JS validate result"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 
 
