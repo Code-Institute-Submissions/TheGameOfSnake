@@ -209,7 +209,17 @@ This feature is left to be implemented. For this feature to track scores of diff
      alt="first html validate result"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
+After fixing the issues: 
+
+<img src="docs\misc\validators\html-validator-2.png"
+     alt="second html validate result"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
+
 ### [CSS Validator]
+
+<img src="docs\misc\validators\css-1.png"
+     alt="first css validate result"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 
 
