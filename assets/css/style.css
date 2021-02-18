@@ -242,17 +242,11 @@ canvas{
 
 @media only screen and (min-width: 768px) and (orientation: portrait){
     #game-section{
-        margin-top: 5rem;
+        margin-top: 12rem;
     }
 
     #controls i{
         font-size: 3rem;
-        padding:0.5rem;
-    }
-
-    #touch-control {
-        width: 50%;
-        height: 15vh;
     }
 
     .game-info{

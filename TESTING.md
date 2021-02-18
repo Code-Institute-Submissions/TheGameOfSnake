@@ -200,12 +200,14 @@ This feature is left to be implemented. For this feature to track scores of diff
 - swipe same direction, nothing should change
 - swipe opposite direction, nothing shoul change
 
-![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs\misc/testing-swipe-control/swipe-control-1.gif)
+![Browse](docs\misc\testing-swipe-control\swipe-control-1.gif)
 
 # Validators
 ### [HTML Validator]
 
-
+<img src="docs\misc\validators\html-validator-1.png"
+     alt="first html validate result"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 ### [CSS Validator]
 
