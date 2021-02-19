@@ -78,7 +78,7 @@ class Snake {
             }
         }
         else {
-            if (this.head.xpos == ctx.canvas.width || this.head.xpos == 0 || this.head.ypos == ctx.canvas.height || this.head.ypos == 0) {
+            if (this.head.xpos == ctx.canvas.width || this.head.xpos == -15 || this.head.ypos == ctx.canvas.height || this.head.ypos == -15) {
                 gameOVer = true;
             }
         }
