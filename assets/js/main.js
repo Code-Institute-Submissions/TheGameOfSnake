@@ -330,7 +330,7 @@ function makeFood(snake) {
                 food_position.xpos = Math.floor(Math.random() * ctx.canvas.width);
             }
 
-            if (snake.body.includes(food_position) || ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { isSame = true; }
+            if (snake.body.filter(item => item.xpos === food_position.xpos && item.ypos === food_position.ypos) || ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { isSame = true; }
 
             isSame = false;
 

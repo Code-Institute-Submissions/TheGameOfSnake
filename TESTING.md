@@ -67,7 +67,9 @@ The game should be played at two game modes which can be selected before startin
 
 - game play with different game modes - NOK
 
-    BUG 1: when playing walls are solid game mode, on the right and upper side of the screen the gameover comes 15 pixel to soon.
+    BUG 1: when playing walls are solid game mode, on the right and upper side of the screen the gameover comes 15 pixel to soon. 
+
+The bug was caused by the checkWall function. If the snake hit canvas height 0 or width 0, it should not be game over only if smaller then 0. This bug is resolved by distract the body size from the 0. 
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-1-demo.gif)
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-gamemode/game-mode-2-demo.gif)
@@ -96,6 +98,8 @@ The game should be played at two game modes which can be selected before startin
 - when food is eaten, new food will be spawned - NOK
 
     BUG 2: in some cases the food is spawned at the snakes body
+
+The method snake.body.includes(food_position) does not work because it is not possible to use includes a object in an array of objects as it is designed for string comparison. Therefore the method find is used to compare the object within the array of objects.
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-3.gif)
 
@@ -133,6 +137,8 @@ The game should be played at two game modes which can be selected before startin
 
     BUG 3: when you hit a key different then arrows at the first key, reference exception is thrown
 
+This bug was solved by JS validation solution. The variable dir was never initialized. So when another key was hit, the property dir was not set but nevertheless assign to newDirection. This caused the reference excention. 
+
 ### Game over feature
 
 
@@ -164,8 +170,6 @@ The game should be played at two game modes which can be selected before startin
 ### Scoreboard feature
 
 - 3 highest scores will be shown in the scoreboard - OK
-
-
 
 - scores will be saved to local storage when leaving the page - OK
 
