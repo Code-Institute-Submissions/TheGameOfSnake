@@ -204,7 +204,7 @@ This feature is left to be implemented. For this feature to track scores of diff
 - swipe same direction, nothing should change
 - swipe opposite direction, nothing shoul change
 
-![Browse](docs\misc\testing-swipe-control\swipe-control-1.gif)
+![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-swipe-control/swipe-control-1.gif)
 
 # Validators
 ### HTML Validator
@@ -239,4 +239,17 @@ When the variable tl and gsap are initialized the animation will not show anymor
 
 # Further Manual Testing
 ### [Lighthouse]
+
+Mobile report
+
+<img src="docs\misc\validators\html-validator-2.png"
+     alt="second html validate result"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
+
+Desktop report
+
+<img src="docs\misc\validators\html-validator-2.png"
+     alt="second html validate result"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
+
 ### [amiresponsive]
