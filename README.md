@@ -201,14 +201,14 @@ Used as IDE
 
 ### Clone
 
-1.  Open your IDE
-2.  Open the command terminal
-2.  execute command: $ gh repo clone Dutchie1990/TheGameOfSnake
-
 1. To clone using HTTPS, copy the following link: https://github.com/Dutchie1990/TheGameOfSnake.git
 2. Open your terminal and your empty directory 
 3. Type: GIT CLONE https://github.com/Dutchie1990/TheGameOfSnake.git
 4. Press enter to execute the clone 
+
+### Download
+
+The repository can be downloaded as zip. Click [here](https://github.com/Dutchie1990/TheGameOfSnake/archive/main.zip) to start the download
 
 additional guidance can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
