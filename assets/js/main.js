@@ -7,8 +7,8 @@ class HeadPosition {
 
 class Snake {
     constructor(head, body, speed, direction) {
-        this.width = 15;
-        this.height = 15;
+        this.width = DIMENSION;
+        this.height = DIMENSION;
         this.speedX = speed.xspeed;
         this.speedY = speed.yspeed;
         this.head = head;
@@ -68,17 +68,17 @@ class Snake {
             if (this.head.xpos >= ctx.canvas.width) {
                 this.head.xpos = 0;
             } else if (this.head.xpos < 0) {
-                this.head.xpos = ctx.canvas.width - 15;
+                this.head.xpos = ctx.canvas.width - DIMENSION;
             } else if (this.head.ypos >= ctx.canvas.height) {
                 this.head.ypos = 0;
             } else if (this.head.ypos < 0) {
-                this.head.ypos = ctx.canvas.height - 15;
+                this.head.ypos = ctx.canvas.height - DIMENSION;
             } else {
                 return;
             }
         }
         else {
-            if (this.head.xpos == ctx.canvas.width || this.head.xpos == -15 || this.head.ypos == ctx.canvas.height || this.head.ypos == -15) {
+            if (this.head.xpos == ctx.canvas.width || this.head.xpos == -DIMENSION || this.head.ypos == ctx.canvas.height || this.head.ypos == -DIMENSION) {
                 gameOVer = true;
             }
         }
@@ -93,6 +93,8 @@ class Snake {
 
     }
 }
+
+const DIMENSION = 15;
 
 var gameMode = {
     troughthewall: 1,
@@ -281,21 +283,21 @@ function resizeCanvasToDisplaySize(canvas) {
     const max_width = 510;
     const max_height = 510;
 
-    // make it dividable by 15 
+    // make it dividable by DIMENSION 
 
-    var ratioW = Math.floor(width / 15);
-    var ratioH = Math.floor(height / 15);
+    var ratioW = Math.floor(width / DIMENSION);
+    var ratioH = Math.floor(height / DIMENSION);
 
     // determine the canvas size
 
-    canvas.width = chooseLower((15 * ratioW), max_width);
-    canvas.height = chooseLower((15 * ratioH), max_height);
+    canvas.width = chooseLower((DIMENSION * ratioW), max_width);
+    canvas.height = chooseLower((DIMENSION * ratioH), max_height);
 }
 
 function setupGameVariables() {
     gameOVer = false;
     speed = { xspeed: 15, yspeed: 0, speed: 15 };
-    head = new HeadPosition(15 * (Math.floor((ctx.canvas.width / 2) / 15)), 15 * (Math.floor((ctx.canvas.height / 2) / 15)));
+    head = new HeadPosition(DIMENSION * (Math.floor((ctx.canvas.width / 2) / DIMENSION)), DIMENSION * (Math.floor((ctx.canvas.height / 2) / DIMENSION)));
     body = [];
     food_position = ({ xpos: 75, ypos: 75 });
     snake = new Snake(head, body, speed, directions.right);
@@ -314,7 +316,7 @@ function makeFood(snake) {
 
     if (hasEaten == false) {
         ctx.fillStyle = "#660000";
-        ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15);
+        ctx.fillRect(food_position.xpos, food_position.ypos, DIMENSION, DIMENSION);
         return hasEaten;
     } else {
         var isSame = true;
@@ -323,8 +325,8 @@ function makeFood(snake) {
         food_position.ypos = 1;
 
         while (isSame) {
-            while (food_position.xpos % 15 != 0) {
-                while (food_position.ypos % 15 != 0) {
+            while (food_position.xpos % DIMENSION != 0) {
+                while (food_position.ypos % DIMENSION != 0) {
                     food_position.ypos = Math.floor(Math.random() * ctx.canvas.height);
                 }
                 food_position.xpos = Math.floor(Math.random() * ctx.canvas.width);
@@ -335,7 +337,7 @@ function makeFood(snake) {
             isSame = false;
 
             ctx.fillStyle = "#660000";
-            ctx.fillRect(food_position.xpos, food_position.ypos, 15, 15);
+            ctx.fillRect(food_position.xpos, food_position.ypos, DIMENSION, DIMENSION);
 
             decideSpeed();
 
