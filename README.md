@@ -30,7 +30,7 @@
 - [Features](#Features) 
     - [Existing Features](#Existing-Features) 
     - [Features Left To Implement](#Features-Left-To-Implement)
-- [Technologies](#Technologies)
+- [Technologies & Tools](#Technologies&tools)
 - [Testing](#Testing)
 - [Deployment](#Deployment)
 - [Credits](#Credits) 
@@ -148,36 +148,63 @@ HachiMaruPop is a cute font that was popular among young Japanese girls in the 1
 In this paragraph the features will be discussed. Also is explained which feature has been implemented and what the impements are for not implemented features. 
 
 ### Existing Features
-Under construction
+Almost all the features discussed in the scope plane are implemented. I had more time to invest in nice to have features leaving only 1 nice to have not implemented. So beside the general gameplay, I implemented some features to make the game more attractive for the players. 
+
+One downside of the game is window resizing. As the window height and width are calculated when the game is initiated, it is not possible to resize the window during the game. Nevertheless, when people are starting the game at mobile or tablet size screen the possibility to extend their screen size are very low. Furthermore, the gameplay is at best at a desktop as it is a browser-based game. For a better experience on mobile or tablet, the game should be developed as a app. 
 
 ### Features Left To Implement
-Under construction
+The leaderboard feature is left to be implemented. This feature is not possible to build yet with the available technologies used in this project. This feature need to have a database storage to store the usernames with their heighscores. 
 
-# Technologies 
+Further improvements can be made on the sensibility of the touchpad. When the user is to quick with his swipe, the touchpad does not always detect a valid swipe. 
 
-Moqups
-HTML5
-CSS
-JavaScript
+Also more gamemodes can be implemented such as a party-mode with iterating colors of the snake's body as well object in the playfield which has to be avoid by the player. 
+
+Due to time issues and technical impedements, I decided to leave those features for further improvements. 
+
+
+# Technologies & Tools
+
+### Tools
+-   Moqups 
+Used to make the mockups and wireframes of the project. 
+- Github
+Used for source control
+- VS code 
+Used as IDE
+
+### Technologies and frameworks
+-   HTML5
+-   CSS
+-   JavaScript
+-   GSAP
 
 # Testing 
-Under construction
+
+[visit TESTING.md](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/TESTING.md)
+
 # Deployment 
 Under construction
+
 # Credits 
-Under construction
+
+### Content
+All the content is written by me.
+
+### Acknowledgments
+Thanks to my tutors and my mentor Ignatius for valueable tips and tricks and helping me throughout the project. I would also like to thank the community on Slack for valuble input regarding the project.
+
 ### Used Websites
-https://coolors.co/ 
-https://www.rgbtohex.net/hextorgb/
-https://attacomsian.com/blog/javascript-copy-array
-https://www.conventionalcommits.org/en/v1.0.0/#summary
-https://en.wikipedia.org/wiki/Snake_(video_game_genre)
-https://www.geeksinux.com/the-elements-of-user-experience-design/ 
-http://www.javascriptkit.com/javatutors/touchevents2.shtml 
-https://www.youtube.com/channel/UCXvIGbH6QsPJYtwzQvwhFyw - how to work with the canvas
-http://technologies4.me/browse/ - how to work with the canvas and game development in general
-https://www.w3schools.com/ 
-https://www.valentinog.com/blog/html-table/
+- https://coolors.co/ 
+- https://www.rgbtohex.net/hextorgb/
+- https://attacomsian.com/blog/javascript-copy-array
+- https://www.conventionalcommits.org/en/v1.0.0/#summary
+- https://en.wikipedia.org/wiki/Snake_(video_game_genre)
+- https://www.geeksinux.com/the-elements-of-user-experience-design/ 
+- http://www.javascriptkit.com/javatutors/touchevents2.shtml 
+- https://www.youtube.com/channel/UCXvIGbH6QsPJYtwzQvwhFyw 
+- http://technologies4.me/browse/ 
+- https://www.w3schools.com/ 
+- https://www.valentinog.com/blog/html-table/
 
 
 
