@@ -27,11 +27,11 @@ class Snake {
         }
     }
     draw() {
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "red";
         ctx.fillRect(this.head.xpos, this.head.ypos, this.width - 1, this.width - 1);
         for (let index = 0; index < this.body.length; index++) {
             var positions = this.body[index];
-            ctx.fillStyle = "rgba(0,0,0,0.5)";
+            ctx.fillStyle = "#fdc555";
             ctx.fillRect(positions.xpos, positions.ypos, this.width - 1, this.height - 1);
         }
     }
