@@ -21,7 +21,6 @@
     - [Javascript Validator](#Javascript-Validator)
 - [Further Manual Testing](#Further-Manual-Testing)
     - [Lighthouse](#Lighthouse)
-    - [amiresponsive](#amiresponsive)
 
 # User Story Testing 
 
@@ -242,14 +241,13 @@ When the variable tl and gsap are initialized the animation will not show anymor
 
 Mobile report
 
-<img src="docs\misc\validators\html-validator-2.png"
+<img src="docs\misc\validators\Lighthouse-desktop.png"
      alt="second html validate result"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 Desktop report
 
-<img src="docs\misc\validators\html-validator-2.png"
+<img src="docs\misc\validators\Lighthouse-mobile.png"
      alt="second html validate result"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
-### [amiresponsive]
