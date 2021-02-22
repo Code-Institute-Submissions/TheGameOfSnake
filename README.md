@@ -168,13 +168,13 @@ Due to time issues and technical impedements, I decided to leave those features 
 
 ### Tools
 -   Moqups 
-Used to make the mockups and wireframes of the project. 
+    - Used to make the mockups and wireframes of the project. 
 - Github
-Used for source control
+    - Used for source control
 - Git
-To make regular commits and pushes to the Github repository 
+    - To make regular commits and pushes to the Github repository 
 - Visual Studio Code 
-Used as IDE
+    - Used as IDE
 
 ### Technologies and frameworks
 -   HTML5
@@ -206,11 +206,11 @@ Used as IDE
 3. Type: GIT CLONE https://github.com/Dutchie1990/TheGameOfSnake.git
 4. Press enter to execute the clone 
 
+additional guidance can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
 ### Download
 
 The repository can be downloaded as zip. Click [here](https://github.com/Dutchie1990/TheGameOfSnake/archive/main.zip) to start the download
-
-additional guidance can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 # Credits 
 
