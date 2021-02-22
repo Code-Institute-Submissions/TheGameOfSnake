@@ -445,8 +445,7 @@ function generateTableHead(el_table) {
 
 function generateTable(table, highScores) {
 
-    highScores.sort(function (a, b) { return a.score - b.score; });
-    highScores.reverse();
+    highScores.sort(function (a, b) { return b.score - a.score; });
 
     let shown_results = (highScores.length < 3) ? highScores.length : 3;
 
