@@ -30,10 +30,12 @@
 - [Features](#Features) 
     - [Existing Features](#Existing-Features) 
     - [Features Left To Implement](#Features-Left-To-Implement)
-- [Technologies & Tools](#Technologies&tools)
+- [Technologies & Tools](#Technologies-and-tools)
 - [Testing](#Testing)
 - [Deployment](#Deployment)
-- [Credits](#Credits) 
+- [Credits](#Credits)
+    - [Content](#Content)
+    - [Acknowledgments](#Acknowledgments)
     - [Used Website](#Used-Websites)
 
 # Project goal
@@ -162,14 +164,16 @@ Also more gamemodes can be implemented such as a party-mode with iterating color
 Due to time issues and technical impedements, I decided to leave those features for further improvements. 
 
 
-# Technologies & Tools
+# Technologies and Tools
 
 ### Tools
 -   Moqups 
 Used to make the mockups and wireframes of the project. 
 - Github
 Used for source control
-- VS code 
+- Git
+To make regular commits and pushes to the Github repository 
+- Visual Studio Code 
 Used as IDE
 
 ### Technologies and frameworks
@@ -183,12 +187,35 @@ Used as IDE
 [visit TESTING.md](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/TESTING.md)
 
 # Deployment 
-Under construction
+
+### Publish
+
+1.  Go to your Github page and Login to your profile
+2.  Navigate to your repositories and select the one you want to publish
+3.  Navigate to the Setting tab
+4.  Scroll down to the Github Pages section
+5.  Select main branch in the first dropdown
+6.  Select /root in the second drowdown
+7.  Click save
+8.  Wait till the text: "Your site is published at ..." appear and navigate to the published website
+
+### Clone
+
+1.  Open your IDE
+2.  Open the command terminal
+2.  execute command: $ gh repo clone Dutchie1990/TheGameOfSnake
+
+1. To clone using HTTPS, copy the following link: https://github.com/Dutchie1990/TheGameOfSnake.git
+2. Open your terminal and your empty directory 
+3. Type: GIT CLONE https://github.com/Dutchie1990/TheGameOfSnake.git
+4. Press enter to execute the clone 
+
+additional guidance can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 # Credits 
 
 ### Content
-All the content is written by me.
+All the content is written by me. The background image comes from the following website: https://www.huahintoday.com/thailand-news/answering-questions-snakes/
 
 ### Acknowledgments
 Thanks to my tutors and my mentor Ignatius for valueable tips and tricks and helping me throughout the project. I would also like to thank the community on Slack for valuble input regarding the project.
@@ -206,6 +233,10 @@ Thanks to my tutors and my mentor Ignatius for valueable tips and tricks and hel
 - https://www.w3schools.com/ 
 - https://www.valentinog.com/blog/html-table/
 
+
+NOTE: 
+
+Thanks for reading my ReadMe.md, I hope you also enjoy the gameplay :)
 
 
 
