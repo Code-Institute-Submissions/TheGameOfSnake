@@ -98,7 +98,7 @@ The bug was caused by the checkWall function. If the snake hit canvas height 0 o
 
     BUG 2: in some cases the food is spawned at the snakes body
 
-The method snake.body.includes(food_position) does not work because it is not possible to use includes a object in an array of objects as it is designed for string comparison. Therefore the method find is used to compare the object within the array of objects.
+The method snake.body.includes(food_position) does not work because it is not possible to use includes a object in an array of objects as it is designed for string comparison. Therefore the method find is used to compare the object within the array of objects. This bug was not fixed after the first bug fix because the isSame boolean was set to false whenever it was true or false and also the draw food function was inside the while loop. This is fixed in the latest bugfix by making a function to either check if the food is spawned on the body and to set the isSame to false first and then check the conditions to set it back to true. Also the draw function moved out the while loop.
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game/game-play-3.gif)
 

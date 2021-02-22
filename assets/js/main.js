@@ -314,17 +314,15 @@ function makeFood(snake) {
         score++;
     }
 
-    if (hasEaten == false) {
-        ctx.fillStyle = "#660000";
-        ctx.fillRect(food_position.xpos, food_position.ypos, DIMENSION, DIMENSION);
-        return hasEaten;
-    } else {
+    if (hasEaten) {
         var isSame = true;
-
-        food_position.xpos = 1;
-        food_position.ypos = 1;
+        decideSpeed();
 
         while (isSame) {
+
+            food_position.xpos = 1;
+            food_position.ypos = 1;
+
             while (food_position.xpos % DIMENSION != 0) {
                 while (food_position.ypos % DIMENSION != 0) {
                     food_position.ypos = Math.floor(Math.random() * ctx.canvas.height);
@@ -332,18 +330,16 @@ function makeFood(snake) {
                 food_position.xpos = Math.floor(Math.random() * ctx.canvas.width);
             }
 
-            if (snake.body.filter(item => item.xpos === food_position.xpos && item.ypos === food_position.ypos) || ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { isSame = true; }
-
             isSame = false;
 
-            ctx.fillStyle = "#660000";
-            ctx.fillRect(food_position.xpos, food_position.ypos, DIMENSION, DIMENSION);
-
-            decideSpeed();
-
-            return hasEaten;
+            if (inBody() || ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { isSame = true; }
         }
     }
+
+    ctx.fillStyle = "#660000";
+    ctx.fillRect(food_position.xpos, food_position.ypos, DIMENSION, DIMENSION);
+
+    return hasEaten;
 }
 
 function reset() {
@@ -483,4 +479,12 @@ function isHorizontal(x) {
     } else {
         return true;
     }
+}
+
+function inBody() {
+    if (snake.body.find(item => item.xpos === food_position.xpos && item.ypos === food_position.ypos)) {
+        return true;
+    }
+    return false;
+
 }
