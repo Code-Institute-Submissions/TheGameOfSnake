@@ -1,5 +1,7 @@
 startupAnimation();
 
+
+//The start animation fired when url is opened
 function startupAnimation(){
     tl = gsap.timeline({defaults: {ease: "sine"}});
 
@@ -13,7 +15,7 @@ function startupAnimation(){
     tl.to(".animation3", {display:"none", duration: 0.1}, "-=0.1");
 }
 
-
+//The screen transition animation, fired hitting the continue button on the gameover page.
 document.getElementById("game-over-button").addEventListener('click', function(){
     tl = gsap.timeline({defaults: {ease:"expo.out"}});
 
