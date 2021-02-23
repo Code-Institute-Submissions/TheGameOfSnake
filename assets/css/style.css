@@ -3,6 +3,7 @@
     font-family: 'Hachi Maru Pop', cursive;
 }
 
+/*Animation CSS */
 
 .animation1{
     position: absolute;
@@ -239,6 +240,8 @@ canvas{
     border: red solid 1px !important;
     box-shadow: 0.2rem 0.3rem 0.3rem rgb(0, 0, 0) ; 
 }
+
+/* Media Queries */
 
 @media only screen and (min-width: 768px) and (orientation: portrait){
     #game-section{
