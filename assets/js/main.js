@@ -21,7 +21,7 @@ class Snake {
         this.body.push(new_body);
         snake.newPos();
         snake.checkWall(mode);
-        var ate = makeFood(snake);
+        var ate = makeFood();
         if (!ate) {
             this.body.splice(0, 1);
         }
@@ -311,10 +311,10 @@ function setupGameVariables() {
     score = 0;
 }
 
-function makeFood(snake) {
+function makeFood() {
     var hasEaten = false;
 
-    if ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos)) {
+    if (inHead()) {
         hasEaten = true;
         score++;
     }
@@ -337,7 +337,7 @@ function makeFood(snake) {
 
             isSame = false;
 
-            if (inBody() || ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos))) { isSame = true; }
+            if (inBody() || inHead()) { isSame = true; }
         }
     }
 
@@ -491,4 +491,8 @@ function inBody() {
         return true;
     }
     return false;
+}
+
+function inHead() {
+    return ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos)) ? true : false;
 }
