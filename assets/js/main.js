@@ -37,22 +37,22 @@ class Snake {
     }
     newPos() {
         if (!isHorizontal(this.direction)) {
-            if (this.newDirection == directions.right) {
+            if (this.newDirection === directions.right) {
                 this.speedX = speed.speed;
                 this.speedY = 0;
                 this.direction = directions.right;
-            } else if (this.newDirection == directions.left) {
+            } else if (this.newDirection === directions.left) {
                 this.speedX = speed.speed * -1;
                 this.speedY = 0;
                 this.direction = directions.left;
             }
         }
         else {
-            if (this.newDirection == directions.up) {
+            if (this.newDirection === directions.up) {
                 this.speedY = speed.speed * -1;
                 this.speedX = 0;
                 this.direction = directions.up;
-            } else if (this.newDirection == directions.down) {
+            } else if (this.newDirection === directions.down) {
                 this.speedY = speed.speed;
                 this.speedX = 0;
                 this.direction = directions.down;
@@ -64,7 +64,7 @@ class Snake {
         this.newDirection = undefined;
     }
     checkWall(mode) {
-        if (mode == gameMode.troughthewall) {
+        if (mode === gameMode.troughthewall) {
             if (this.head.xpos >= ctx.canvas.width) {
                 this.head.xpos = 0;
             } else if (this.head.xpos < 0) {
@@ -78,7 +78,7 @@ class Snake {
             }
         }
         else {
-            if (this.head.xpos == ctx.canvas.width || this.head.xpos == -DIMENSION || this.head.ypos == ctx.canvas.height || this.head.ypos == -DIMENSION) {
+            if (this.head.xpos === ctx.canvas.width || this.head.xpos === -DIMENSION || this.head.ypos === ctx.canvas.height || this.head.ypos === -DIMENSION) {
                 gameOVer = true;
             }
         }
@@ -86,7 +86,7 @@ class Snake {
     crash() {
         for (let index = 0; index < this.body.length; index++) {
             var positions = this.body[index];
-            if (this.head.xpos == positions.xpos && this.head.ypos == positions.ypos) {
+            if (this.head.xpos === positions.xpos && this.head.ypos === positions.ypos) {
                 gameOVer = true;
             }
         }
@@ -191,7 +191,7 @@ function setUpGame() {
 }
 
 function startGame() {
-    if (ctx == null) { return; }
+    if (ctx === null) { return; }
 
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     snake.update(mode);
@@ -353,6 +353,7 @@ function reset() {
 
     el_throughthewall.classList.add('active-gamemode');
     el_wallsaresolid.classList.remove('active-gamemode');
+
     setTimeout(function () {
         el_infosection.classList.remove('invisible');
         el_gameoversection.classList.add('invisible');
@@ -412,8 +413,6 @@ function swipedetect(el, callback) {
 function toggleControl(control) {
     let el_btntouchpad = document.getElementById("btn-touchpad");
     let el_btnarrows = document.getElementById('btn-arrows');
-
-
     let el_buttoncontrol = document.getElementById('arrows-control');
 
     if (control === "touchpad") {
@@ -434,7 +433,6 @@ function toggleControl(control) {
 
 function generateTableHead(el_table) {
     let data = Object.keys(highScores[0]);
-
     let thead = el_table.createTHead();
     let row = thead.insertRow();
 
@@ -470,29 +468,18 @@ function generateTable(table, highScores) {
 }
 
 //Helper functions
-
 function chooseLower(a, b) {
-    if (a > b) {
-        return b;
-    }
-    return a;
+    return (a > b) ? b : a;
 }
 
 function isHorizontal(x) {
-    if (x == directions.up || x == directions.down) {
-        return false;
-    } else {
-        return true;
-    }
+    return (x === directions.up || x === directions.down) ? false : true;  
 }
 
 function inBody() {
-    if (snake.body.find(item => item.xpos === food_position.xpos && item.ypos === food_position.ypos)) {
-        return true;
-    }
-    return false;
+    return (snake.body.find(item => item.xpos === food_position.xpos && item.ypos === food_position.ypos)) ? true : false;
 }
 
 function inHead() {
-    return ((snake.head.xpos == food_position.xpos) && (snake.head.ypos == food_position.ypos)) ? true : false;
+    return ((snake.head.xpos === food_position.xpos) && (snake.head.ypos === food_position.ypos)) ? true : false;
 }
