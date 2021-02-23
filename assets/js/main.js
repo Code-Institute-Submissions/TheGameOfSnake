@@ -198,9 +198,16 @@ function startGame() {
     snake.crash();
     snake.draw();
 
-    if (el_score && el_level) {
+    let style = window.getComputedStyle(document.getElementsByClassName('game-info')[0]);
+
+    if (style.display === "block") {
         el_score.firstChild.innerHTML = `Your score is: ${score}`;
         el_level.firstChild.innerHTML = `Your level is: ${level}`;
+    } else {
+        ctx.font = "10px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText(`Level: ${level}`, 10, 10);
+        ctx.fillText(`Score: ${score}`, 50, 10);
     }
 
     if (!gameOVer) {
