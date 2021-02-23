@@ -140,7 +140,6 @@ This bug was solved by JS validation solution. The variable dir was never initia
 
 ### Game over feature
 
-
 - the continue button is clickable to return to start game screen - OK
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game-over/game-over-1.gif)
@@ -161,10 +160,16 @@ This bug was solved by JS validation solution. The variable dir was never initia
 
 ### Levels feature
 
-- after each 3 food eaten, the snake should increase level 
-- when increase level speed should be increased
+- after each 3 food eaten, the snake should increase level - OK
+- when increase level speed should be increased - OK
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-levels/levels-1.gif)
+
+- score is visible in the game area at smaller screens - OK
+
+<img src="docs\misc\testing-levels\levels-small-screen.png"
+     alt="score and highscore and level visible at smaller screens"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 ### Scoreboard feature
 
