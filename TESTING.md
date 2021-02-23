@@ -108,19 +108,19 @@ The method snake.body.includes(food_position) does not work because it is not po
 - at desktop control elements are not visible - OK
 
 <img src="docs\misc\testing-control\desktop-control.png"
-     alt="desktop at mobile devices"
+     alt="desktop controls"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - at tablets arrows and touchpad are visible - OK
 
 <img src="docs\misc\testing-control\tablet-control.png"
-     alt="tablet at mobile devices"
+     alt="tablet and mobile devices controls"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - at mobile arrows and touchpad are visible - OK
 
 <img src="docs\misc\testing-control\mobile-control.png"
-     alt="controls at mobile devices"
+     alt="controls and mobile devices controls"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 - pressing right snake direction should be change to right, when snake moves vertical - OK 
@@ -144,11 +144,10 @@ This bug was solved by JS validation solution. The variable dir was never initia
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-game-over/game-over-1.gif)
 
-- highscores are rendered into table - OK
 - the score and level is presented to the user - OK
 
 <img src="docs\misc\testing-game-over\scores-highscore.png"
-     alt="score and highscore and level are rendered"
+     alt="score and level are rendered"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 ### Welcome screen feature
@@ -175,16 +174,20 @@ This bug was solved by JS validation solution. The variable dir was never initia
 
 - 3 highest scores will be shown in the scoreboard - OK
 
+<img src="docs\misc\testing-highscores\highscores-in-table.png"
+     alt="highscores shown in table"
+     style="float: left; margin-right: 10px; margin-bottom: 10px;" />
+
 - scores will be saved to local storage when leaving the page - OK
 
 <img src="docs\misc\testing-highscores\local-storages.png"
-     alt="score and highscore and level are rendered"
+     alt="scores saved in local storage"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
-- sores will be loaded into highScores variable when starting the game - OK 
+- scores will be loaded into highScores variable when starting the game - OK 
 
 <img src="docs\misc\testing-highscores\loaded-highscores.png"
-     alt="score and highscore and level are rendered"
+     alt="scores load into highScores variable from local storage"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 ### Animate screen transition
@@ -200,13 +203,13 @@ This feature is left to be implemented. For this feature to track scores of diff
 
 ### Swipe control feature
 
-- the swipe control can be selected 
-- swiping right snake direction should be change to right, when snake moves vertical
-- swiping left snake direction should be change to left, when snake moves vertical
-- swiping up snake direction should be change to up, when snake moves horizontal
-- swiping down snake direction should be change to down, when snake moves horizontal
-- swipe same direction, nothing should change
-- swipe opposite direction, nothing shoul change
+- the swipe control can be selected - OK
+- swiping right snake direction should be change to right, when snake moves vertical - OK
+- swiping left snake direction should be change to left, when snake moves vertical - OK
+- swiping up snake direction should be change to up, when snake moves horizontal - OK
+- swiping down snake direction should be change to down, when snake moves horizontal - OK
+- swipe same direction, nothing should change - OK
+- swipe opposite direction, nothing shoul change - OK
 
 ![Browse](https://github.com/Dutchie1990/TheGameOfSnake/blob/main/docs/misc/testing-swipe-control/swipe-control-1.gif)
 
@@ -232,14 +235,14 @@ After fixing the issues:
 ### Javascript Validator
 
 <img src="docs\misc\validators\JS-validator.png"
-     alt="JS validate result"
+     alt="JS validate result main.js"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 <img src="docs\misc\validators\JS-validator-animate.png"
-     alt="JS validate result"
+     alt="JS validate result animate.js"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
-When the variable tl and gsap are initialized the animation will not show anymore. So I accepted this warnings.
+When the variable tl and gsap are initialized, the animation will not show anymore. So I accepted this warnings.
 
 # Further Manual Testing
 ### [Lighthouse]
@@ -247,12 +250,12 @@ When the variable tl and gsap are initialized the animation will not show anymor
 Mobile report
 
 <img src="docs\misc\validators\Lighthouse-desktop.png"
-     alt="second html validate result"
+     alt="lighthouse report mobile"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
 Desktop report
 
 <img src="docs\misc\validators\Lighthouse-mobile.png"
-     alt="second html validate result"
+     alt="lighthouse report desktop"
      style="float: left; margin-right: 10px; margin-bottom: 10px;" />
 
