@@ -107,7 +107,7 @@ At the game over page there should be an overview of the best 3 scores in a tabl
 
 - Animate screen transition
 
-When a game finish, the user should see a animation like a curtain close and open again with the gameover page. As soon the game ends, the animation starts and when the curtain is fully closed, the gameover screen should load. When it is loaded the curtain should open again and the gameover page should be able to see for the user. 
+When the user want to start a new game and hit the continue button on the gameover page, the screen animation should start. This must gave a feeling of leaving the old game behind and start over again like close a curtain and open it again. 
 
 - Leader board feature
 
