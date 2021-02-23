@@ -76,26 +76,46 @@ Within the scope of this project, there are some features needed to make an ‘M
 
 - Game mode feature
 
+This feature consist of the 2 gamemodes which should be implemented. First gamemode is 'through the wall' and the second gamemode is 'walls are solid'. The user should be able to choose the gamemode before they start a game. After each game the game mode should be reset and set to 'through the wall'. When the player plays the 'through the wall' gamemode, the snake when hitting the wall should be appear on the opposite side. Whenever the player plays the 'walls are solid' gamemode, the game should be gameover when hitting a wall. 
+
 - Game feature
+
+This feature contains the gameplay. When the user start a game, the game area should appear with the snake in the middle and a random food object should be spawned in the game area. The snake should move in the right direction when the game starts and it should be able to control by the player, see control feature. When the snake eats a food object the snake must grow lenght by 1 block. The game should end when the snake eat his own body and sometimes depended on the game mode hitting the wall. 
 
 - Control feature
 
+During the game the snake should be controlled by the user. At desktop devices, the snake should be controlled by the arrow keys and at mobile devices and tablets control arrows will be shown. When hitting the arrow in the same or opposite direction of the snakes direction, no change should happen. When hitting vertical direction when the snake is going horizontal direction, the snake's direction have to change to up or down depended on the user input and visa versa. 
+
 - Game over feature
+
+When the conditions of gameover are met, the game should stop and the user should see a gameover screen. In this screen the user should be able to continue to start a new game. The game itself is reset as well the gamemode as described in the gamemode feature. 
 
 ### Nice To Have
 Nevertheless, more features can be added to the minimum viable product to make the game more attractive to the users.
 
 - Welcome screen feature
 
+A welcome page is shown when the user first load the game url. The welcome text should fade away and the screen should split into and transite to left and right like a curtain which open up. When the buttons are visible for the user, they should be able to use right away and the animation should not be blocking any user interaction with the page. 
+
 - Levels feature
+
+When a player eat 3 food objects the level as well as the speed of the snake should be increased. The level and the score are visible above the gamearea for the user at larger screens and are visible in the game area on smaller screens. This score and level values should be updated in real-time. When the game is finished the final score and level should be shown to the user at the gameover page. 
 
 - Scoreboard feature
 
+At the game over page there should be an overview of the best 3 scores in a table. This table consist of the level, score, date and gamemode. When the user ends the game, the scores should be stored at the local storage at the user's machine. Whenever a user come back to play the game, the old scores should be retrived from the local storage and shown to the user. 
+
 - Animate screen transition
+
+When a game finish, the user should see a animation like a curtain close and open again with the gameover page. As soon the game ends, the animation starts and when the curtain is fully closed, the gameover screen should load. When it is loaded the curtain should open again and the gameover page should be able to see for the user. 
 
 - Leader board feature
 
+In this feature a name should be ask from the user and the highest score should be sent to a database. Together with all other users there will be a leaderboard which can be visited via a button on the start screen. Within this leaderboard you can filter on gamemode and should be able to find your name with position in the leaderboard.
+
 - Swipe control feature
+
+At mobile and tablet devices, the user should be able to toggle controls. They are able to choose from the toughpad or the regular arrow controls. When using the toughpad the snake should be controlled by swiping in the designated area. 
 
 ## Structure
 The site will contain one page which is manipulated by JavaScript.
@@ -175,12 +195,15 @@ Due to time issues and technical impedements, I decided to leave those features 
     - To make regular commits and pushes to the Github repository 
 - Visual Studio Code 
     - Used as IDE
+-  Outklip
+    - To make gif files for TESTING.md
 
 ### Technologies and frameworks
 -   HTML5
--   CSS
+-   CSS3
 -   JavaScript
 -   GSAP
+-   Googles Fonts
 
 # Testing 
 

@@ -268,12 +268,10 @@ function setUpCanvas() {
     });
 }
 
-
 function changeDirection(direction) {
     var dir = direction;
     snake.newDirection = directions[dir];
 }
-
 
 function resizeCanvasToDisplaySize(canvas) {
     // look up the size the canvas is being displayed and multiply by percentage of canvas size
@@ -486,5 +484,4 @@ function inBody() {
         return true;
     }
     return false;
-
 }
